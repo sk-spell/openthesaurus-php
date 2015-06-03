@@ -1,0 +1,447 @@
+This changelog tries to summarize the most important changes to OpenThesaurus
+so that you can update your OpenThesaurus installation from CVS.
+Please also check include/config-template.php for new configuration
+settings (not all of which I list here).
+
+2008-11-22:
+-New homepage design and other small design changes
+ Affected files: several
+
+2008-09-28:
+-Thanks to Martin Srebotnjak OpenThesaurus can now create .oxt files,
+ i.e. extensions that are used in the upcoming OpenOffice 3.0 to
+ install different kinds of add-ons and dictionaries.
+ A new option TARGET_OOO3 has been introduced in config.php.
+ NOTE 1: The export script works on the output files of 
+ ooo_new_export.php, so ooo_new_export.php must always be run
+ before ooo_oxt_export.php!
+ NOTE 2: You need to carefully configure description_template.xml
+ and Dictionaries.xcu to remove the references to German ("de").
+ README_OOo3_template will also need to be adapted to your needs.
+ Affected files:
+  For building the thesaurus file:
+  www/admin/index.php
+  www/admin/description_template.xml
+  www/admin/README_OOo3_template
+  www/admin/ooo_oxt_export.php
+  www/OOo2-Thesaurus/Dictionaries.xcu
+  www/OOo2-Thesaurus/META-INF/manifest.xml
+  For linking the new file:
+  include/download_small.php
+  include/config-template.php
+  www/faq.php
+  messages.po/mo
+
+2008-07-29:
+-The meta information which lets people add OpenThesaurus as a search engine
+ in their browser's search bar is now embedded on every page
+ Affected files: include/top.php
+
+2008-06-15:
+-Linked Yahoo for external searches, removed to Google link
+ that duplicated the Wikipedia/Wiktionary search
+ Affected files: include/external_searches.php
+
+2008-04-10:
+-HTTP Content-Type is now always set to the value of $htmlcharset
+ Affected files: include/top.php
+
+2008-01-01:
+-Small HTML change to work around Opera bug (submit button didn't work)
+ Affected files: www/index.php
+
+2007-10-20
+-Two strings ("News" and "Archive") on the homepage had not
+ been translated
+ Affected files: www/index.php
+
+2007-10-12
+-Use the OpenSearch standard so that at least Firefox can
+ auto-detect the OpenThesaurus search url. Simply clicking on
+ the list of search engines in the upper right corner of the
+ Firefox window lets you add OpenThesaurus (unless it is added
+ already).
+ Affected files: include/top.php, include/config-template.php,
+  new file: www/opensearch.php
+
+2007-09-27
+-avoid error when converting chars outside of latin1
+ Affected files: include/external_searches.php
+
+2007-09-24
+-The homepage now offers an RSS feed of the latest changes,
+ thanks to Marcin Milkowski.
+ The feed will be written to "www/feed.xml", so make sure PHP 
+ can write to that file.
+ NOTE: this only works with REALTIME_STATS_UPDATE set to 0,
+ as the refresh of the feed happens when the statistics are
+ updated
+ *** WARNING *** about privacy change: this feed contains the 
+ user names, i.e. everybody can see by whom each change was made
+
+2007-08-21
+-Registering and sending reminder emails could cause
+ error messages because of the use of mysql_real_escape_string()
+ in tool.php. A workaround has been added by opening a MySQL
+ connection.
+ Affected files: www/do_register.php, www/do_remind.php
+
+2007-08-18
+-Added new option MEMORY_DB that uses a memory
+ database for similarity search and substring search,
+ making those types of searches much faster. You need
+ to call admin/recreate-mem-db.php regularly (e.g. via
+ cronjob) to update the memory database so new words
+ can be found.
+
+2007-08-05
+-Fixed links to Wikipedia that contain uppercase letters
+ (Wikipedia URLs are case sensitive)
+ Affected files: include/wikipedia_links.php
+
+2007-07-22
+-Added new page that lets the user browse all words 
+ alphabetically.
+ Affected files: www/a-z.ph (new), www/include/styles.css,
+ 	messages.po/mo
+
+2007-07-16
+-New option SUPERSETS_IN_OVERVIEW which decides whether
+ to display the superordinate synsets in overview.php
+ Affected file: www/include/styles.css,
+ 	include/config-template.php, include/synset.php,
+ 	messages.po/mo
+-Superordinate words now printed with usage information
+ Affected file: www/synset.php
+
+2007-07-11
+-New feature: Show links from Wikipedia. The links
+ need to be extracted from an XML Wikipedia dump
+ using WikipediaLinkDumper.java which produces SQL
+ output. This output then needs to be imported into MySQL.
+ Affected files: include/wikipedia_links.php (new),
+ 	www/overview.php,
+ 	java/de/openthesaurus/wikipedia/WikipediaLinkDumper.java (new)
+
+2007-07-09
+-Avoid displaying duplicate word forms in word_detail.php
+ Affected file: include/tool.php
+
+2007-07-07
+-Improved the similarity search that is triggered if there's
+ no direct match: now also searches the normalized field
+ (words.lookup)
+ Affected file: include/tool.php
+-Improved display of words in variation.php
+ Affected file: www/variation.php, include/tool.php
+
+2007-07-05
+-New option WORD_DETAIL_WITHOUT_AUTH, links and allows access
+ to word_detail.php to users who are not logged in.
+ Affected files: include/tool.php, include/config-template.php,
+  www/word_detail.php, www/synset.php
+
+2007-05-11
+-The Wiktionary import has been improved to only import entries
+ of a given language (Wiktionary for language "X" included several
+ languages, not only words in language "X"!).
+ The language -- actually the string that is searched for in the XML
+ dump -- is set using the new option WIKTIONARY_LANG.
+ Affected file: include/config-template.php, admin/import_wiktionary.php
+-Fixed the similar word suggestions which sometimes could 
+ offer words that had already been deleted (probably affects
+ only German).
+ Affected file: include/tool.php
+
+2007-04-22
+-The call to iconv() has been commented out, doesn't seem to
+ be necessary anymore(?)
+ Affected file: include/wiktionary.php
+
+2007-04-22
+-The substring search had some bugs that should be fixed now.
+ Affected file: include/tool.php
+
+2007-04-05
+-Print word forms from (optional) word_forms table in word detail page
+
+2007-03-05
+-The links on the homepage are now in an external file.
+ Affected files: www/index.php, www/links.php (new file)
+
+2007-02-20
+-The hit count in the search log got broken by the latest changes
+ Affected files: www/overview.php
+
+2007-02-17
+-Improved output in case there are no matches: the first output
+ isn't just "No matches" anymore but a "Did you mean..." list.
+ Affected files: www/overview.php, include/levenshtein.php,
+  include/synsets.php + translation files
+
+2007-02-08
+-Changed the statistics to display number of subscribed users (instead
+ of total number of user actions)
+ Affected files: www/stats.php
+
+2007-01-20
+-Added two new config settings: TOP_SYNSET_NAME_ADJ, TOP_SYNSET_ID_ADJ.
+ If TOP_SYNSET_ID_ADJ is not -1, the page tree.php will display a tree
+ of adjectives. Remember to copy the changes from config-template.php
+ to config.php.
+ Affected files: www/tree.php, include/config-template.php
+
+2007-01-14
+-When tree.php is called with openall=1, the tree will be completely
+ expanded (there is, however, no such link that points to
+ this feature yet).
+ Affected files: www/tree.php
+
+2007-01-14
+-Setting a word as an antonym now gives a better error message
+ (not just SQL error) if that word was antonym of another word
+ already.
+ Affected files: www/word_detail.php, messages.po/mo
+
+2007-01-12
+-Improved the subject and body of the suggestion mail:
+ print word in subject, link word in mail body
+ Affected file: www/suggest.php
+
+2007-01-07
+-The top synset for verbs cannot be assigned a superordinate 
+ synset anymore.
+ Affected file: www/synset.php
+
+2007-01-04
+-The myaddslashes() function has been improved to use
+ mysql_real_escape_string() instead of addslahses() for
+ improved security. This also means that OpenThesaurus
+ is supposed to be used with MySQL.
+ Affected file: include/tool.php
+
+2006-12-31
+-fixed registration: mailing list subscription mail was sent even
+ without the checkbox being clicked
+-improved suggestion mail (suggest.php) to show synset
+
+2006-12-12
+-date of users latest login is stored in database:
+ ALTER TABLE `auth_user` ADD `last_login` DATETIME NULL ;
+
+2006-11-19
+-some fixes for regex quoting in several files
+
+2006-10-29
+-Added a form to the login page so users can suggest words without logging in.
+ The suggestion is mailed to the admin (see config-template.php).
+
+2006-10-14
+-Improved user action logging in word_detail.php
+
+2006-09-23
+-Improved logging (needs database change, see thesaurus.sql)
+
+2006-09-03
+-Extended search log:
+ ALTER TABLE `search_log` ADD `webservice` TINYINT NOT NULL DEFAULT '0';
+
+2006-09-02
+-new option UTF8_DATABASE in config.php
+
+2006-08-28
+-The German OpenThesaurus has been moved to a new server. PHP5 is used now,
+ pages are in UTF-8 now (should only affect German-specific pages).
+-Security fixes have been ported from latest phplib
+
+2006-08-27
+-tagged as version V_1_0 before server move
+
+2006-06-18
+-committed directory "webservice" that lets people make simple queries
+ via webservice (XML-RPC)
+
+2006-06-17
+-changed SQL query in include/synsets.php for better performance
+
+2006-06-15
+-The tree view now shows usage information, i.e. "colloquial" etc. 
+ (affected files: include/tool.php, www/tree.php)
+-Each synset (synset.php) now links directly to the tree view
+ if the synset has subordinate or superordinate synsets
+
+2006-06-13
+Usability: always place cursor in search field (not just on the homepage)
+
+2006-06-11
+-Duplicate matches in substring search have been fixed (tool.php)
+-new option DISPLAY_LANGUAGE_LINK
+
+2006-06-10
+The export for OpenOffice.org 2.x now also lists antonyms.
+
+2006-05-05
+Imprint/contact information has been moved to its own page
+(www/imprint.php)
+
+2006-04-15
+I had to rename the variable $base_url in config.php to the constant
+BASE_URL because of some error messages I suddenly got on the online
+server.
+
+2006-04-15
+Added a feature to use synonyms and meanings from Wiktionary. These
+are imported into an extra table using admin/import_wiktionary.php and
+are then displayed on overview.php.
+
+2006-04-15
+The Levenshtein algorithm is faster now, as it doesn't take into
+account the first character of the user input (i.e. it assumes
+the first character is correct). Use getSimilarWords(..., $fastmode=0) 
+to get the old behavior.
+
+2006-04-14
+Security fix: the value used in the SQL query in getSimilarWords() was not escaped
+
+2006-04-14
+Refactorings; added colum to 'uses' table, use this command
+to create it:
+ALTER TABLE `uses` ADD `shortname` VARCHAR( 255 ) NOT NULL ;
+New options in config-template.php:
+DEFAULT_SEARCH
+SPELLCHECK_EXE
+SPELLCHECK_DICT_BASE
+
+2006-04-09
+Moved news on the homepage to its own file (news.php) that get included.
+
+2006-04-07
+Antonym support activated. An antonym is a pair of words (not synsets),
+it can be set on each word's properties page.
+
+2006-03-18
+ATTENTION: the license of the German OpenThesaurus data has been changed,
+so I had to modify register.php. After an update make sure that the text
+in register.php is still valid for your project.
+
+2006-03-17
+www/OOo-Thesaurus/COPYING is now a placeholder, not a real license anymore.
+You need to replace it with e.g. GPL, LGPL, ...
+www/COPYING has been removed. The license relevant to the project (not the
+data) is the COPYING file in the top-level directory.
+
+2006-03-12
+The meta tag that prevented robots from indexing the page has been removed 
+from synset.php.
+
+2006-02-23
+The exported ZIP for OpenOffice.org >= 2.x (ooo_new_export.php) now doesn't
+contain a subdirectory anymore. This makes the format compatible with the
+one expected by DicOOo.
+
+2006-02-22
+Only relevant for German: added support for Swiss version (OOo 2.x only)
+
+2006-02-19
+The export for OpenOffice.org >= 2.x (ooo_new_export.php) has been modified to 
+use the lookup field. This means that entries like "(sich) �bernehmen" can now
+be found in OpenOffice.org when searching for "�bernehmen".
+
+2006-02-04
+A database index was missing. Creating it can speed up synset.php
+for cases where many recent changes are listed:
+ALTER TABLE `user_actions_log` ADD INDEX ( `synset_id` );
+
+2006-01-21
+Users can now change the subject of a synset (e.g. 'Chemistry', 'Physics', ...),
+until now this was only possible for the administrator
+
+2005-11-14
+ooo_new_export.php can now optionally export subordinate concepts.
+Thanks to Marcin Milkowski for the patch.
+
+2005-06-03
+The time a user's search takes is now logged.
+Extend your database structure using this command:
+ALTER TABLE `search_log` ADD `searchtime` FLOAT;
+
+2005-05-22
+Antonym support was still broken, some of this has been fixed but it
+still has a bug.
+
+2005-05-16, updated 2005-05-18
+Added support for antonyms -- only accessible for admin
+now as it needs more testing.
+This requires the following change to the database:
+CREATE TABLE `antonyms` (
+ `id` INT NOT NULL ,
+ `word_meaning_id1` INT NOT NULL ,
+ `word_meaning_id2` INT NOT NULL ,
+ PRIMARY KEY ( `id` ) ,
+ INDEX ( `word_meaning_id1` , `word_meaning_id2` ) 
+);
+ALTER TABLE `antonyms` ADD UNIQUE (`word_meaning_id1`);
+ALTER TABLE `antonyms` ADD UNIQUE (`word_meaning_id2`);
+
+2005-04-17
+Export for OOo2 now supports generic terms. Set some values at the top
+of admin/ooo_new_export.php to configure this behaviour.
+
+2005-04-02 (German data change, not relevant for anyone else)
+Added:
+	-20 largest cities in Germany, according to
+	 http://de.wikipedia.org/wiki/Liste_der_Gro�st�dte_in_Deutschland
+	-all German Bundeslaender (except Berlin, Bremen, Hamburg,
+	 as these are already under "Stadt, Ort")
+	-Wochentage
+
+2005-03-03
+The export for OOo 2.0 (www/admin/ooo_new_export.php) should work now.
+
+2004-07-03
+A new feature has been added to the admin page that makes sure you don't
+miss any action. Just click the "Continue checking" button and you will
+be shown all unchecked actions in small chunks. Use the following statements
+to update your database:
+
+CREATE TABLE `admin_checks` (
+ `keyname` VARCHAR( 255 ) NOT NULL ,
+ `value` VARCHAR( 255 ) 
+);
+INSERT INTO `admin_checks` ( `keyname` , `value` ) 
+VALUES (
+ 'check_date', NULL 
+);
+
+2004-06-26
+Added a new 'lookup' column. If an entry contains a string with
+parentheses these will be removed and the result will be put in
+the lookup field. This way people can find (German) "freuen"
+even if the entry is "(sich) freuen". Use the following statements
+to update your database:
+
+ALTER TABLE `words` ADD `lookup` VARCHAR( 255 ) ;
+ALTER TABLE `words` ADD INDEX ( `lookup` ) ;
+
+2004-04-09
+Made words.word non-binary so that MySQL SELECT statements
+are case-insensitive by default now. The unique index had to
+be removed for this. Execute the following SQL commands
+if you update, otherwise users' searches will not be 
+case-insensitive:
+
+ALTER TABLE `words` DROP INDEX `word`;
+ALTER TABLE `words` CHANGE `word` `word` VARCHAR( 255 ) NOT NULL;
+ALTER TABLE `words` ADD INDEX ( `word` );
+
+2003-05-09
+Translated user-visible pages to English. German translation
+available and used by default.
+
+2003-04-18
+Added a page so that synset properties can be modified. 
+Currently only the admin can access it.
+
+2003-04-17
+Added 'use' information (currently for admin user only), i.e. a 
+word in a given synset can be used colloqiually etc. 

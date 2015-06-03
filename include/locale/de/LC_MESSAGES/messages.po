@@ -1,0 +1,1067 @@
+# translation of messages.po to
+# This file is distributed under the same license as the PACKAGE package.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER.
+#
+# Daniel Naber <naber at danielnaber de>, 2003, 2004, 2005.
+# Daniel Naber <list@danielnaber.de>, 2005, 2006.
+# Daniel Naber <list2006@danielnaber.de>, 2006, 2007, 2008.
+msgid ""
+msgstr ""
+"Project-Id-Version: messages\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2009-05-16 00:06+0200\n"
+"PO-Revision-Date: 2008-11-23 00:38+0100\n"
+"Last-Translator: Daniel Naber <list2006@danielnaber.de>\n"
+"Language-Team:  <de@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=ISO-8859-1\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+
+#: ../../../../include/phplib/loginform.html:9
+msgid ""
+"You can use this form to suggest words without being logged in. These words "
+"will be checked before they are included in OpenThesaurus."
+msgstr ""
+"Hier können Wörter vorgeschlagen werden, ohne sich einzuloggen. Diese "
+"Vorschläge werden geprüft, bevor sie in OpenThesaurus übernommen werden."
+
+#: ../../../../include/phplib/loginform.html:20
+msgid "Synonyms (separated by comma):"
+msgstr "Synonym-Vorschläge<br />(Wörter bitte durch Kommas trennen):"
+
+#: ../../../../include/phplib/loginform.html:29
+msgid "Suggest Synonyms"
+msgstr "Synonyme vorschlagen"
+
+#: ../../../../include/phplib/loginform.html:39
+msgid ""
+"You have to log in to directly add your corrections to our data. Don't have "
+"an account yet? <a href=\"register.php\"><strong>Sign up here.</strong></a>"
+msgstr ""
+"Man muss eingeloggt sein, um direkte Änderungen an den Daten vornehmen zu "
+"können. Wer noch keinen Account hat, kann sich hier <a href=\"register.php"
+"\"><strong>registrieren.</strong></a>"
+
+#: ../../../../include/phplib/loginform.html:52
+msgid "Username (email):"
+msgstr "Benutzername (E-Mail):"
+
+#: ../../../../include/phplib/loginform.html:61
+msgid "Password:"
+msgstr "Passwort:"
+
+#: ../../../../include/phplib/loginform.html:65
+msgid "Note: Cookies need to be enabled to log in"
+msgstr "Hinweis: zum Login müssen Cookies aktiviert sein"
+
+#: ../../../../include/phplib/loginform.html:79
+msgid "<p class=\"error\">Couldn't log in, please activate cookies.</p>"
+msgstr ""
+"<p class=\"error\">Einloggen nicht möglich, bitte Cookies aktivieren.</p>"
+
+#: ../../../../include/phplib/loginform.html:81
+msgid ""
+"<p class=\"error\">Invalid username or password.<br />Please note: Login "
+"requires cookies.</p>"
+msgstr ""
+"<p class=\"error\">Benutzername oder Passwort sind nicht korrekt.<br />Bitte "
+"beachten: Login funktioniert nur mit aktivierten Cookies.</p>"
+
+#: ../../../../include/phplib/loginform.html:89
+msgid ""
+"Forgot your password? Just <a href=\"register.php\">register again</a> and "
+"the password will be emailed to you."
+msgstr ""
+"Passwort vergessen? Einfach mit der gleichen E-Mail-Adresse <a href="
+"\"register.php\">nochmal registrieren</a>, um das Passwort per E-Mail zu "
+"bekommen."
+
+#: ../../../../include/baseforms.php:15
+msgid "Grammatically related words (base forms):"
+msgstr "Grammatikalisch verwandte Wörter (Grundformen):"
+
+#: ../../../../include/download.php:9
+#: ../../../../include/download_small.php:10
+msgid "OpenOffice.org 2.x thesaurus"
+msgstr "OpenOffice.org-2.x-Thesaurus"
+
+#: ../../../../include/download.php:37
+msgid "OpenOffice.org 1.x thesaurus"
+msgstr "OpenOffice.org-1.x-Thesaurus"
+
+#: ../../../../include/download.php:50
+#: ../../../../include/download_small.php:40
+msgid "Plain text thesaurus"
+msgstr "Text-Thesaurus"
+
+#: ../../../../include/download.php:52
+#: ../../../../include/download_small.php:42
+msgid ""
+"can be used with <a href=\"http://www-user.tu-chemnitz.de/~fri/ding/\">Ding</"
+"a>"
+msgstr ""
+" z.&nbsp;B. für <a href=\"http://www-user.tu-chemnitz.de/~fri/ding/\">Ding</"
+"a>"
+
+#: ../../../../include/download.php:63
+msgid "KWord thesaurus"
+msgstr "KWord-Thesaurus"
+
+#: ../../../../include/download_small.php:24
+msgid "OpenOffice.org 3.x thesaurus"
+msgstr "OpenOffice.org-3.x-Thesaurus"
+
+#: ../../../../include/external_searches.php:4
+#, php-format
+msgid "Search '<span class=\"inp\">%s</span>' using :"
+msgstr "'<span class=\"inp\">%s</span>' suchen mit:"
+
+#: ../../../../include/levenshtein.php:26
+#: ../../../../include/wikipedia_links.php:38
+#: ../../../../include/wiktionary.php:52
+msgid "No matches"
+msgstr "Keine Treffer"
+
+#: ../../../../include/rss.php:15 ../../../../include/rss.php:16
+#: ../../../../include/rss.php:31 ../../../../www/changes.php:12
+msgid "Recent changes in the thesaurus"
+msgstr "Letzte Änderungen in OpenThesaurus"
+
+#: ../../../../include/rss.php:55 ../../../../include/rss.php:56
+#: ../../../../www/changes.php:61 ../../../../www/changes.php:62
+#: ../../../../www/top_users.php:52 ../../../../www/top_users.php:53
+msgid "(anonymous)"
+msgstr "(anonym)"
+
+#: ../../../../include/rss.php:64 ../../../../www/changes.php:74
+msgid "[none]"
+msgstr "[keine]"
+
+#: ../../../../include/spellcheck.php:4
+msgid "Spellcheck suggestions:"
+msgstr "Vorschläge der Rechtschreibprüfung:"
+
+#: ../../../../include/spellcheck.php:49
+msgid "unknown word, no similar words found"
+msgstr "Unbekanntes Wort; keine Vorschläge gefunden"
+
+#: ../../../../include/spellcheck.php:65
+msgid "<li>Word is spelled correctly</li>"
+msgstr "<li>Wort ist richtig geschrieben</li>"
+
+#: ../../../../include/substring_matches.php:7
+msgid "Substring matches in OpenThesaurus:"
+msgstr "Teilwort-Treffer in OpenThesaurus:"
+
+#: ../../../../include/substring_matches.php:31
+msgid "&gt;&gt; more substring matches"
+msgstr "&gt;&gt; mehr Teilwort-Treffer"
+
+#: ../../../../include/substring_matches.php:36
+msgid "No substring matches"
+msgstr "Keine Teilwort-Treffer"
+
+#: ../../../../include/synsets.php:39
+msgid "No exact matches in OpenThesaurus. Did you mean..."
+msgstr "Keine genauen Treffer in OpenThesaurus. Meinten Sie..."
+
+#: ../../../../include/synsets.php:43
+msgid "Synsets:"
+msgstr "Wortgruppen, deren Wörter synonym sind:"
+
+#: ../../../../include/synsets.php:87
+msgid "Superordinate synset"
+msgstr "Oberbegriff"
+
+#: ../../../../include/tool.php:269
+msgid "Error: word is too short."
+msgstr "Fehler: Wort ist zu kurz"
+
+#: ../../../../include/tool.php:272
+msgid "Error: word is too long."
+msgstr "Fehler: Wort ist zu lang"
+
+#: ../../../../include/tool.php:366
+#, php-format
+msgid "Search '%s' with Google"
+msgstr "'%s' mit Google suchen"
+
+#: ../../../../include/tool.php:367
+#, php-format
+msgid "http://www.google.de/search?q=%s&amp;lr=lang_de"
+msgstr "http://www.google.de/search?q=%s&amp;lr=lang_de"
+
+#: ../../../../include/tool.php:370
+#, php-format
+msgid "Search '%s' with Wikipedia"
+msgstr "'%s' mit Wikipedia suchen"
+
+#: ../../../../include/tool.php:371
+#, php-format
+msgid "http://www.google.de/search?q=site:de.wikipedia.org+%s"
+msgstr "http://www.google.de/search?q=site:de.wikipedia.org+%s"
+
+#: ../../../../include/tool.php:699
+msgid "new meaning"
+msgstr "neue Bedeutung"
+
+#: ../../../../include/tool.php:711
+#, php-format
+msgid "Removed superordinate reference: <span class=\"removed\">%s</span>"
+msgstr "Verknüpfung mit Oberbegriff <span class=\"removed\">%s</span> gelöscht"
+
+#: ../../../../include/tool.php:715
+#, php-format
+msgid "Added superordinate reference: <span class=\"added\">%s</span>"
+msgstr ""
+"Verknüpfung mit Oberbegriff <span class=\"added\">%s</span> hinzugefügt"
+
+#: ../../../../include/tool.php:717
+#, php-format
+msgid "Added antonym relation: <span class=\"added\">%s</span>"
+msgstr "Verknüpfung mit Antonym <span class=\"added\">%s</span> hinzugefügt"
+
+#: ../../../../include/tool.php:719
+#, php-format
+msgid "Changed antonym relation: <span class=\"added\">%s</span>"
+msgstr "Verknüpfung mit Antonym <span class=\"added\">%s</span> geändert"
+
+#: ../../../../include/tool.php:721
+#, php-format
+msgid "Deleted antonym relation: <span class=\"removed\">%s</span>"
+msgstr "Verknüpfung mit Antonym <span class=\"removed\">%s</span> gelöscht"
+
+#: ../../../../include/tool.php:725 ../../../../include/wiktionary.php:45
+#: ../../../../www/add.php:54 ../../../../www/synset_detail.php:76
+#: ../../../../www/synset_detail.php:77
+msgid "(none)"
+msgstr "(keine)"
+
+#: ../../../../include/tool.php:731
+#, php-format
+msgid "Change of subject:"
+msgstr "Änderung der Kennzeichnung:"
+
+#: ../../../../include/top.php:27 ../../../../include/top.php:28
+msgid "OpenThesaurus - German Thesaurus - Login"
+msgstr "OpenThesaurus - Deutscher Thesaurus - Login"
+
+#: ../../../../include/top.php:78 ../../../../include/top.php:80
+msgid "OpenThesaurus Home"
+msgstr "OpenThesaurus"
+
+#: ../../../../include/top.php:93 ../../../../include/top.php:95
+msgid "FAQ"
+msgstr "FAQ"
+
+#: ../../../../include/top.php:99 ../../../../include/top.php:101
+msgid "Imprint"
+msgstr "Impressum"
+
+#: ../../../../include/top.php:106
+msgid "Search:"
+msgstr "Suchen:"
+
+#: ../../../../include/top.php:107
+msgid "Go"
+msgstr "Los!"
+
+#: ../../../../include/top.php:136
+msgid "Language: "
+msgstr "Sprache: "
+
+#: ../../../../include/top.php:161
+#, php-format
+msgid "Logged in as <span class=\"naviusername\">%s</span>"
+msgstr "Eingeloggt als <span class='naviusername'>%s</span>"
+
+#: ../../../../include/top.php:164 ../../../../include/top.php:166
+msgid "Preferences"
+msgstr "Einstellungen"
+
+#: ../../../../include/top.php:169
+msgid "Logout"
+msgstr "Ausloggen"
+
+#: ../../../../include/top.php:172 ../../../../include/top.php:174
+msgid "Login"
+msgstr "Login"
+
+#: ../../../../www/a-z.php:9
+msgid "OpenThesaurus: All Words A-Z"
+msgstr "OpenThesaurus: Alle Wörter von A bis Z"
+
+#: ../../../../www/a-z.php:10
+msgid "Words A-Z"
+msgstr "Wörter A-Z"
+
+#: ../../../../www/a-z.php:106
+msgid "No words found starting with these characters"
+msgstr "Keine Wörter mit diesen Anfangbuchstaben gefunden"
+
+#: ../../../../www/add.php:8
+msgid "Add another Synset"
+msgstr "Neue Synonymgruppe eingeben"
+
+#: ../../../../www/add.php:17
+msgid "Word&nbsp;(<a href='faq.php#grundform'>base&nbsp;form</a>)"
+msgstr "Wort&nbsp;(<a href='faq.php#grundform'>Grundform</a>)"
+
+#: ../../../../www/add.php:36
+msgid "A new synset -- i.e. a new meaning -- will be started with this word."
+msgstr ""
+" Hier kann das erste Wort einer neuen Synonymgruppe hinzugefügt werden, "
+"<em>sofern diese Bedeutung noch nicht existiert</em>."
+
+#: ../../../../www/add.php:43 ../../../../www/synset_detail.php:124
+msgid "in terms of:"
+msgstr "im Sinne von:"
+
+#: ../../../../www/add.php:46
+msgid "Which of the possibly several meanings does this new meaning refer to?"
+msgstr "Optional: zu welchem Themengebiet gehört die Synonymgruppe?"
+
+#: ../../../../www/add.php:47
+msgid ""
+"Example: <span class='bsp'>pawn</span> can be used in terms of <span "
+"class='bsp'>chessman</span>. You only have to fill out this field if the "
+"meaning isn't clear by looking at the word's synonyms."
+msgstr ""
+"Beispiel: das Wort <span class='bsp'>Bauer</span> kann im Sinne von <span "
+"class='bsp'>Schachfigur </span> benutzt werden. Wenn die Bedeutung jedoch "
+"schon durch die Synonyme klar wird, ist diese Angabe überflüssig."
+
+#: ../../../../www/add.php:52 ../../../../www/synset_detail.php:130
+msgid "Subject:"
+msgstr "Kennzeichnung:"
+
+#: ../../../../www/add.php:71
+msgid "Which subject does the synset refer to?"
+msgstr "Optional: zu welchem Themengebiet gehört die Synonymgruppe?"
+
+#: ../../../../www/add.php:78 ../../../../www/get_comment.php:28
+msgid "Send"
+msgstr "Abschicken"
+
+#: ../../../../www/add.php:79
+msgid "Synonyms may be added on the next page"
+msgstr ""
+"Synonyme können nach dem Abschicken dieses Formulars hinzugefügt werden."
+
+#: ../../../../www/changes.php:26
+msgid "Recent changes"
+msgstr "Letzte Änderungen"
+
+#: ../../../../www/check.php:8
+msgid "OpenThesaurus: Check synsets"
+msgstr "OpenThesaurus: Einträge prüfen"
+
+#: ../../../../www/check.php:20
+#, php-format
+msgid ""
+"<p>Here are %s randomly selected synonym sets. Please check if each group "
+"contains only synonyms. If it doesn't, please follow the link and fix the "
+"synset:</p>"
+msgstr ""
+"<p>Es folgen %s zufällig ausgewählte Beispieleinträge. Bitte überprüfen, ob "
+"die Wörter jedes Eintrags synonym zueinander sind. Wenn nicht, dem Link "
+"folgen und dort Korrekturen vornehmen:</p>"
+
+#: ../../../../www/check.php:68 ../../../../www/check.php:69
+#: ../../../../www/check.php:70
+#, php-format
+msgid "Show %d more random synsets"
+msgstr "%d weitere zufällig ausgewählte Einträge anzeigen"
+
+#: ../../../../www/do_register.php:7
+#, php-format
+msgid "Invalid email address '%s'."
+msgstr "Fehler: Ungültige E-Mail-Adresse '%s'"
+
+#: ../../../../www/do_register.php:12
+msgid "Error: the checkbox must be selected"
+msgstr ""
+"Fehler: das Feld mit der Einverständniserklärung muss aktiviert werden."
+
+#: ../../../../www/do_register.php:33
+msgid "Registered on "
+msgstr "Registrierung auf "
+
+#: ../../../../www/do_register.php:35
+msgid "You have succesfully registered on "
+msgstr "Erfolgreiche Registrierung auf "
+
+#: ../../../../www/do_register.php:37 ../../../../www/do_remind.php:30
+msgid "Username: "
+msgstr "Benutzername: "
+
+#: ../../../../www/do_register.php:38 ../../../../www/do_remind.php:31
+msgid "Password: "
+msgstr "Passwort: "
+
+#: ../../../../www/do_register.php:81 ../../../../www/register.php:30
+msgid "Register"
+msgstr "Registrierung"
+
+#: ../../../../www/do_register.php:85
+#, php-format
+msgid ""
+"Thanks for registering. The password will be sent to <span class='inp'>%s</"
+"span>."
+msgstr ""
+"Vielen Dank für die Anmeldung. Das Passwort wird an <span class=\"inp\">%s</"
+"span> geschickt."
+
+#: ../../../../www/do_register.php:87 ../../../../www/do_remind.php:45
+msgid "Back to homepage"
+msgstr "Zurück zur Homepage"
+
+#: ../../../../www/do_remind.php:27 ../../../../www/remind.php:5
+msgid "Password Reminder"
+msgstr "Passwort-Erinnerung"
+
+#: ../../../../www/do_remind.php:29
+#, php-format
+msgid "Password reminder for %s"
+msgstr "Passwort-Erinnerung für %s"
+
+#: ../../../../www/do_remind.php:39
+msgid "Sending Password Reminder"
+msgstr "Passwort-Erinnerung wird verschickt"
+
+#: ../../../../www/do_remind.php:43
+msgid "A password reminder will soon be sent to your email address."
+msgstr "Die Passwort-Erinnerung wird jetzt per E-Mail verschickt."
+
+#: ../../../../www/do_save.php:47 ../../../../www/synset.php:345
+msgid ""
+"This synset cannot be deleted because it is a subordinate or superordinate "
+"synset for another synset."
+msgstr ""
+"Diese Synonymgruppe kann nicht gelöscht werden, da sie ein Ober- oder "
+"Unterbegriff einer anderen Synonymgruppe ist."
+
+#: ../../../../www/do_save.php:153
+msgid ""
+"Error: You did not select a superordinate conecpt. Please go back and select "
+"one of the given options."
+msgstr ""
+"Fehler: Es wurde kein Oberbegriff ausgewählt. Bitte zurückgehen und eine der "
+"vorgegebenen Optionen wählen."
+
+#: ../../../../www/do_save.php:188
+msgid ""
+"You cannot remove all synonyms of a synset. Use the checkbox to delete the "
+"synset instead."
+msgstr ""
+"Es ist nicht möglich, alle Synonyme einer Synonymgruppe zu entfernen. Man "
+"kann aber die ganze Synonymgruppe entfernen, indem man die entsprechende "
+"Checkbox auswählt."
+
+#: ../../../../www/do_save.php:208
+msgid "Synset removed"
+msgstr "Synonymgruppe gelöscht"
+
+#: ../../../../www/do_save.php:211
+#, php-format
+msgid "The synset <span class='inp'>%s</span> has been deleted."
+msgstr "Synonymgruppe '%s' gelöscht."
+
+#: ../../../../www/do_save.php:214
+msgid "Return to homepage"
+msgstr "Zurück zur Homepage"
+
+#: ../../../../www/get_comment.php:9
+msgid "Comment on the deletion"
+msgstr "Kommentar zum Löschen"
+
+#: ../../../../www/get_comment.php:19
+#, php-format
+msgid ""
+"Please add a short comment that explains why the synset <span class='inp'>%"
+"s</span> can be deleted:"
+msgstr ""
+"Bitte kurz begründen, warum die Synonymgruppe <span class='inp'>%s</span> "
+"entfernt werden soll."
+
+#: ../../../../www/get_comment.php:23
+msgid "Short comment:"
+msgstr "Kurzer Kommentar:"
+
+#: ../../../../www/index.php:9
+msgid "OpenThesaurus (homepage headline)"
+msgstr "OpenThesaurus - Synonyme und Assoziationen"
+
+#: ../../../../www/index.php:10
+msgid "OpenThesaurus (homepage title)"
+msgstr "OpenThesaurus - Synonyme - Deutscher Thesaurus"
+
+#: ../../../../www/index.php:44 ../../../../www/substring_search.php:50
+#: ../../../../www/suggestions.php:29
+msgid "Search"
+msgstr "Suchen"
+
+#: ../../../../www/multimatch.php:9
+#, php-format
+msgid "Matches for '%s'"
+msgstr "Treffer für '%s'"
+
+#: ../../../../www/multimatch.php:21 ../../../../www/synset.php:446
+#, php-format
+msgid "Add another meaning of '%s' to the thesaurus"
+msgstr "Eine andere Bedeutung von '%s' in den Thesaurus einfügen"
+
+#: ../../../../www/multimatch.php:26 ../../../../www/suggestions.php:52
+#, php-format
+msgid "Add '%s' and synonyms to the thesaurus"
+msgstr "'%s' und Synonyme zum Thesaurus hinzufügen"
+
+#: ../../../../www/news_archive.php:8
+msgid "OpenThesaurus - News Archiv"
+msgstr "OpenThesaurus - News-Archiv"
+
+#: ../../../../www/overview.php:17
+#, fuzzy, php-format
+msgid "YXThesaurus Matches for '<span class=\"inp\">%s</span>'"
+msgstr "<span class=\"inp\">%s</span> - Synonyme bei OpenThesaurus"
+
+#: ../../../../www/overview.php:18
+#, php-format
+msgid "Thesaurus Matches for '<span class=\"inp\">%s</span>'"
+msgstr "<span class=\"inp\">%s</span> - Synonyme bei OpenThesaurus"
+
+#: ../../../../www/overview.php:49
+msgid "Similarly spelled words from OpenThesaurus:"
+msgstr "Ähnlich geschriebene Wörter in OpenThesaurus:"
+
+#: ../../../../www/overview.php:87
+#, php-format
+msgid "Add '%s' and synonyms to OpenThesaurus"
+msgstr "'%s' und Synonyme zum OpenThesaurus hinzufügen"
+
+#: ../../../../www/prefs.php:9
+msgid "Personal Settings"
+msgstr "Persönliche Einstellungen"
+
+#: ../../../../www/prefs.php:16
+msgid "<p class=\"error\">Error: passwords don't match.</p>"
+msgstr "<p class=\"error\">Fehler: Passwörter stimmen nicht überein</p>"
+
+#: ../../../../www/prefs.php:19
+msgid ""
+"<p class=\"error\">Error: password is too short (minimum length is 4 "
+"characters).</p>"
+msgstr ""
+"<p class=\"error\">Fehler: Passwort ist zu kurz (Mindestlänge 4 Zeichen).</p>"
+
+#: ../../../../www/prefs.php:28
+msgid ""
+"<p class=\"okay\">New password has been set and will become active for the "
+"next login.</p>"
+msgstr ""
+"<p class=\"okay\">Das Passwort wurde geändert. Der nächste Login muss mit "
+"dem neuen Passwort erfolgen.</p>"
+
+#: ../../../../www/prefs.php:36
+msgid "<p class=\"okay\">New visible name has been set.</p>"
+msgstr "<p class=\"okay\">Sichtbarer Name wurde geändert.</p>"
+
+#: ../../../../www/prefs.php:39
+msgid "<p class=\"error\">No changes made.</p>"
+msgstr "<p class=\"error\">Keine Veränderung vorgenommen.</p>"
+
+#: ../../../../www/prefs.php:60
+msgid "Login:"
+msgstr "Login:"
+
+#: ../../../../www/prefs.php:64
+msgid "New password:"
+msgstr "Neues Passwort:"
+
+#: ../../../../www/prefs.php:66
+msgid "Leave empty to keep your current password."
+msgstr "Feld leer lassen um das aktuelle Passwort nicht zu ändern."
+
+#: ../../../../www/prefs.php:69
+msgid "New password (again):"
+msgstr "Neues Passwort (Wiederholung):"
+
+#: ../../../../www/prefs.php:73
+msgid "Visible name:"
+msgstr "Sichtbarer Name:"
+
+#: ../../../../www/prefs.php:76
+msgid ""
+"This name will appear in the statistics that are publicly visible. Leave "
+"empty if you want to stay anonymous."
+msgstr ""
+"Dieser Name wird in den öffentlich sichtbaren Statistiken angezeigt. Wer "
+"anonym bleiben will, kann dieses Feld einfach leer lassen."
+
+#: ../../../../www/prefs.php:80
+msgid "Change"
+msgstr "Ändern"
+
+#: ../../../../www/prefs.php:86
+msgid "Personal Statistics"
+msgstr "Persönliche Statistik"
+
+#: ../../../../www/prefs.php:90
+msgid "Words and synsets added:"
+msgstr "Hinzugefügte Wörter und Synonymgruppen:"
+
+#: ../../../../www/prefs.php:105
+msgid "Words and synsets removed:"
+msgstr "Gelöschte Wörter und Synonymgruppen:"
+
+#: ../../../../www/register.php:3
+msgid "OpenThesaurus - Register"
+msgstr "OpenThesaurus Registrierung"
+
+#: ../../../../www/register.php:7
+msgid ""
+"You need to register to log in if you want write access. A generated "
+"password will be sent to your email address."
+msgstr ""
+"Zum Einloggen ist eine Registrierung erforderlich. Dabei wird ein Passwort "
+"generiert und an die angegebene E-Mail-Adresse gesendet."
+
+#: ../../../../www/register.php:9
+msgid ""
+"The only reason to register is to actively contribute to this site (adding "
+"synonyms etc). If you don't plan to do that, there's no need to register."
+msgstr ""
+"Wenn man aktiv an OpenThesaurus teilnehmen möchte (Synonyme hinzufügen "
+"etc.), muss man registriert sein. Wenn man das nicht will, gibt es auch "
+"keinen Grund sich zu registrieren."
+
+#: ../../../../www/register.php:15
+msgid "Email:"
+msgstr "E-Mail:"
+
+#: ../../../../www/register.php:20
+msgid ""
+"I agree that the words and synonyms entered by me will be published under "
+"the <a href='http://www.gnu.org/copyleft/lesser.html'>GNU Lesser General "
+"Public License (LGPL)</a>. OpenThesaurus reserves the right to additionally "
+"publish the data under any other <a href='http://www.opensource.org/docs/"
+"definition.php'>Open Source License (OSI definition)</a>. I will only enter "
+"data that nobody else holds a copyright on."
+msgstr ""
+"Ich bin damit einverstanden, dass von mir eingegebene Thesaurus-Daten unter "
+"der <a href='http://www.gnu.org/copyleft/lesser.html'>GNU Lesser General "
+"Public License (LGPL)</a> der Öffentlichkeit zur Verfügung gestellt werden. "
+"Außerdem behält das OpenThesaurus-Projekt sich das Recht vor, die Thesaurus-"
+"Daten zusätzlich zur LGPL unter einer anderen <a href='http://www.opensource."
+"org/docs/definition.php'>Open Source Lizenz (laut OSI-Definition)</a> zu "
+"veröffentlichen. Ich werde nur Daten in das System eingeben, die frei von "
+"Rechten Dritter sind."
+
+#: ../../../../www/register.php:25
+#, fuzzy
+msgid ""
+"Also subscribe me on the (low-traffic) OpenThesaurus mailing list. You will "
+"get an additional email that you need to reply to in order to join the list."
+msgstr ""
+"Ich will an der Mailing-Liste teilnehmen. Dazu muss ich auf die zusätzliche "
+"E-Mail, die von der Mailing-Listen-Software geschickt wird, antworten."
+
+#: ../../../../www/remind.php:9
+#, php-format
+msgid "Send password to '%s'?"
+msgstr "Passwort an '%s' senden?"
+
+#: ../../../../www/remind.php:13
+msgid "Send password"
+msgstr "Passwort verschicken"
+
+#: ../../../../www/select_synset.php:9
+#, php-format
+msgid "Synsets with '%s'"
+msgstr "Synonymgruppen mit '%s'"
+
+#: ../../../../www/select_synset.php:25
+#, php-format
+msgid "Please select a superordinate concept for <strong>%s</strong>:"
+msgstr "Bitte Oberbegriff zu <strong>%s</strong> auswählen:"
+
+#: ../../../../www/select_synset.php:31
+#, php-format
+msgid ""
+"Error: <strong>%s</strong> cannot be a superordinate concept, as it already "
+"appears in the current synset. Please go back and try again."
+msgstr ""
+"Fehler: <strong>%s</strong> kann kein Oberbegriff sein, da es schon in der "
+"aktuellen Synonymgruppe erscheint."
+
+#: ../../../../www/select_synset.php:36
+msgid "Please select below:"
+msgstr "Bitte wählen:"
+
+#: ../../../../www/select_synset.php:37
+#, php-format
+msgid "Create a new synset containing '%s' as the first word"
+msgstr "Eine neue Synonymgruppe mit '%s' als erstem Wort anlegen"
+
+#: ../../../../www/select_synset.php:80
+msgid "Use synset:"
+msgstr "Diese Synonymgruppe benutzen:"
+
+#: ../../../../www/select_synset.php:87
+msgid "Continue"
+msgstr "Weiter"
+
+#: ../../../../www/statistics.php:8
+msgid "OpenThesaurus - Statistics"
+msgstr "OpenThesaurus Statistik"
+
+#: ../../../../www/stats.php:13
+msgid "Database statistics"
+msgstr "Datenbank-Statistik"
+
+#: ../../../../www/stats.php:29
+msgid "Number of words:"
+msgstr "Synonyme:"
+
+#: ../../../../www/stats.php:39
+msgid "Number of synonym sets:"
+msgstr "Bedeutungen:"
+
+#: ../../../../www/stats.php:63
+msgid "Subscribed users:"
+msgstr "Angemeldete User"
+
+#: ../../../../www/stats.php:77
+#, php-format
+msgid "Changes (last %d days):"
+msgstr "Änderungen (letzte %d Tage):"
+
+#: ../../../../www/substring_search.php:20
+#, php-format
+msgid "No Substring  Matches for '%s'"
+msgstr "Keine Teilwort-Treffer für '%s'"
+
+#: ../../../../www/substring_search.php:22
+#, php-format
+msgid "Substring Matches for '%s'"
+msgstr "Thesaurus-Teilwort-Treffer für '%s'"
+
+#: ../../../../www/substring_search.php:34
+msgid ""
+"Note that search operators like <span class='inp'>*</span> or <span "
+"class='inp'>%</span> are not supported."
+msgstr ""
+"Hinweis: Operatoren wie <span class='inp'>*</span> und <span class='inp'>%</"
+"span> werden nicht untersützt."
+
+#: ../../../../www/substring_search.php:48 ../../../../www/suggestions.php:27
+msgid "New search"
+msgstr "Neue Suche"
+
+#: ../../../../www/substring_search.php:55 ../../../../www/suggestions.php:34
+msgid "Find substrings"
+msgstr "Teilworte finden"
+
+#: ../../../../www/substring_search.php:66
+#, php-format
+msgid "Matches <b>%d</b> to <b>%d</b> of <b>%d</b>:"
+msgstr "Treffer <b>%d</b> bis <b>%d</b> von insgesamt <b>%d</b>:"
+
+#: ../../../../www/substring_search.php:71
+#: ../../../../www/substring_search.php:73
+#: ../../../../www/substring_search.php:98
+#: ../../../../www/substring_search.php:100
+msgid "&lt;&lt; previous"
+msgstr "&lt;&lt; zurück"
+
+#: ../../../../www/substring_search.php:76
+#: ../../../../www/substring_search.php:78
+#: ../../../../www/substring_search.php:103
+#: ../../../../www/substring_search.php:105
+msgid " next &gt;&gt;"
+msgstr "weiter &gt;&gt;"
+
+#: ../../../../www/substring_search.php:114
+#, php-format
+msgid "Add '%s' to the thesaurus"
+msgstr "'%s' zum Thesaurus hinzufügen"
+
+#: ../../../../www/suggest.php:52
+msgid "Thanks for your contribution."
+msgstr "Danke für die Vorschläge."
+
+#: ../../../../www/suggestions.php:14
+#, php-format
+msgid "No synonyms found for '%s'"
+msgstr "Keine Synonyme für '%s' gefunden"
+
+#: ../../../../www/synset.php:85
+#, php-format
+msgid "Synset '%s'"
+msgstr "Synonym-Details zu '<span class=\"inp\">%s</span>' - OpenThesaurus"
+
+#: ../../../../www/synset.php:101
+msgid "Modification saved."
+msgstr "Änderung durchgeführt."
+
+#: ../../../../www/synset.php:103
+msgid "Synset successfully created."
+msgstr "Synonymgruppe angelegt."
+
+#: ../../../../www/synset.php:107
+msgid "Details"
+msgstr "Details"
+
+#: ../../../../www/synset.php:126
+msgid "This synset was deleted."
+msgstr "Synonymgruppe gelöscht."
+
+#: ../../../../www/synset.php:137
+msgid "in terms of"
+msgstr "im Sinne von"
+
+#: ../../../../www/synset.php:143
+msgid "Synset"
+msgstr "Synonymgruppe"
+
+#: ../../../../www/synset.php:168
+msgid "Modify word properties"
+msgstr "Worteigenschaften ändern"
+
+#: ../../../../www/synset.php:197
+#, php-format
+msgid "show all %d meanings of this word"
+msgstr "Alle %d Bedeutungen dieses Wortes anzeigen"
+
+#: ../../../../www/synset.php:207 ../../../../www/word_detail.php:269
+msgid "Antonym:"
+msgstr "Antonym:"
+
+#: ../../../../www/synset.php:219
+msgid "n/a"
+msgstr "keine Angabe"
+
+#: ../../../../www/synset.php:222
+msgid "remove word from synset"
+msgstr "Wort hier löschen"
+
+#: ../../../../www/synset.php:225
+msgid "search word"
+msgstr "Wort suchen"
+
+#: ../../../../www/synset.php:245
+msgid ""
+"Optional: Add one more word - <a href=\"faq.php#grundform\">base forms</a> "
+"only - to this synset:"
+msgstr ""
+"Optional: ein weiteres Synonym - nur <a href=\"faq.php#grundform"
+"\">Grundform</a> - zu dieser Synonymgruppe hinzufügen:"
+
+#: ../../../../www/synset.php:268
+msgid "(maximum number of synonyms reached)"
+msgstr "(keine weiteren Synonyme möglich, Maximalzahl erreicht)"
+
+#: ../../../../www/synset.php:285
+msgid ""
+"Superordinate und subordinate synsets (<a href=\"faq.php#hierarchie\">Help</"
+"a>):<br />"
+msgstr ""
+"Ober- und Unterbegriffe (<a href=\"faq.php#hierarchie\">Hilfe</a>):<br />"
+
+#: ../../../../www/synset.php:294
+msgid "This is the top superordinate synset."
+msgstr "Dies ist der oberste Oberbegriff."
+
+#: ../../../../www/synset.php:296
+msgid "Superordinate concept:"
+msgstr "Oberbegriff:"
+
+#: ../../../../www/synset.php:298
+msgid "delete reference"
+msgstr "Verknüpfung löschen"
+
+#: ../../../../www/synset.php:302
+msgid "No superordinate concept defined yet for this synset. Set one now:"
+msgstr ""
+"Es ist noch kein Oberbegriff für diese Synonymgruppe definiert. Jetzt einen "
+"definieren:"
+
+#: ../../../../www/synset.php:319
+msgid "Subordinate concepts:"
+msgstr "Unterbegriffe:"
+
+#: ../../../../www/synset.php:324
+msgid "There are no subordinate concepts yet for this synset."
+msgstr "Es sind noch keine Unterbegriffe für diese Synonymgruppe definiert."
+
+#: ../../../../www/synset.php:334
+msgid "Show in tree view"
+msgstr "In Baumansicht zeigen"
+
+#: ../../../../www/synset.php:343
+#, php-format
+msgid "Remove the synset '%s'"
+msgstr "Die Synonymgruppe '%s' ganz entfernen"
+
+#: ../../../../www/synset.php:358
+msgid ""
+"This synset has only one word and no superordinate concept. Please add a "
+"synonym, set a superordinate concept, or delete this synset."
+msgstr ""
+"Dieses Synonymgruppe besteht nur aus einem Wort und hat keine Oberbegriffe. "
+"Bitte fügen Sie ein Synonym ein oder setzen Sie eine Verbindung zu einem "
+"Oberbegriff (oder löschen Sie diese Synonymgruppe)."
+
+#: ../../../../www/synset.php:364 ../../../../www/synset_detail.php:137
+#: ../../../../www/word_detail.php:318
+msgid "Modify"
+msgstr "Ändern"
+
+#: ../../../../www/synset.php:373
+msgid "Latest three modifications in this synset"
+msgstr "Letzte drei Benutzer-Korrekturen in dieser Synonymgruppe"
+
+#: ../../../../www/synset.php:374
+msgid "added"
+msgstr "hinzugefügt"
+
+#: ../../../../www/synset.php:375
+msgid "removed"
+msgstr "gelöscht"
+
+#: ../../../../www/synset.php:396
+msgid "(no modifications so far)"
+msgstr "(Bisher keine Korrekturen)"
+
+#: ../../../../www/synset_detail.php:68
+#, php-format
+msgid "Details for synset '%s'"
+msgstr "Eigenschaften der Synonymgruppe '%s'"
+
+#: ../../../../www/synset_detail.php:113 ../../../../www/word_detail.php:238
+msgid "Synset:"
+msgstr "Synonymgruppe:"
+
+#: ../../../../www/synset_detail.php:119
+msgid "Visible:"
+msgstr "Sichtbar:"
+
+#: ../../../../www/synset_detail.php:143 ../../../../www/word_detail.php:325
+msgid "Back to synset"
+msgstr "Zurück zur Synonymgruppe"
+
+#: ../../../../www/top_users.php:9
+#, php-format
+msgid "OpenThesaurus - Most active users"
+msgstr "OpenThesaurus - Aktivste Nutzer"
+
+#: ../../../../www/top_users.php:19
+msgid ""
+"Only users who have configured their 'visible name' are shown here. Everbody "
+"else is listed as anonymous. If you have an account and want to be listed "
+"here, make sure to set the 'visible name' in your <a href=\"prefs.php"
+"\">preferences</a>."
+msgstr ""
+"Hier werden nur Benutzer angezeigt, die ihren 'sichtbaren Namen' <a href="
+"\"prefs.php\">eingestellt</a> haben, alle anderen werden als anonym "
+"aufgelistet."
+
+#: ../../../../www/top_users.php:37
+#, php-format
+msgid "...the last %d days:"
+msgstr "...in den letzten %d Tagen:"
+
+#: ../../../../www/top_users.php:41
+msgid "Changes"
+msgstr "Änderungen"
+
+#: ../../../../www/top_users.php:42
+msgid "User"
+msgstr "Benutzername"
+
+#: ../../../../www/tree.php:52
+msgid "Show subordinate meanings"
+msgstr "Unterbegriffe anzeigen"
+
+#: ../../../../www/tree.php:69
+msgid "No subordinate meanings defined yet"
+msgstr "Bisher keine Unterbegriffe definiert"
+
+#: ../../../../www/tree.php:74
+msgid "OpenThesaurus Tree"
+msgstr "OpenThesaurus Baumansicht"
+
+#: ../../../../www/tree.php:79
+msgid ""
+"This page displays the OpenThesaurus hierarchie of nouns. Click the <tt>[+]</"
+"tt> links to step into the hierarchie."
+msgstr ""
+"Hier wird die OpenThesaurus-Hierarchie angezeigt. Mit <tt>[+]</tt> öffnet "
+"man die Verschachtelung."
+
+#: ../../../../www/tree.php:81
+msgid ""
+"Note that this page only shows synonym sets which have been classified "
+"(which is the case for only a fraction of all terms in OpenThesaurus)."
+msgstr ""
+"Hinweis: Diese Seite zeigt nur Synonymgruppen, die bereits in die Hierarchie "
+"eingeordnet wurden (verglichen mit der Größe von OpenThesaurus das ist "
+"bisher nur bei wenigen der Fall)."
+
+#: ../../../../www/word_detail.php:73 ../../../../www/word_detail.php:101
+msgid "A word cannot be an antonym of itself"
+msgstr "Ein Wort kann nicht Gegenteil von sich selber sein"
+
+#: ../../../../www/word_detail.php:96
+msgid ""
+"This word doesn't exist. Please create a new synonym group with this word "
+"first."
+msgstr ""
+"Dieses Wort existiert nicht. Bitte zuerst eine neue Synonymgruppe mit diesem "
+"Wort anlegen."
+
+#: ../../../../www/word_detail.php:126
+#, php-format
+msgid "Details for word '%s'"
+msgstr "Eigenschaften des Wortes '%s' - OpenThesaurus"
+
+#: ../../../../www/word_detail.php:153
+msgid ""
+"Error: the antonym you selected is already connected to a different word."
+msgstr ""
+"Fehler: Das ausgewählte Antonym ist bereits Antonym eines anderen Wortes."
+
+#: ../../../../www/word_detail.php:242
+msgid "Word:"
+msgstr "Wort:"
+
+#: ../../../../www/word_detail.php:246
+msgid "Word forms:"
+msgstr "Wortformen:"
+
+#: ../../../../www/word_detail.php:257
+msgid "Word usage in this synset:"
+msgstr "Nutzung des Wortes in dieser Synonymgruppe:"
+
+#: ../../../../www/word_detail.php:281
+msgid "Please disambiguate your input:"
+msgstr "Bitte auswählen:"
+
+#~ msgid "OpenThesaurus - German Thesaurus"
+#~ msgstr "OpenThesaurus - Synonyme und Assoziationen"
+
+#~ msgid "Word"
+#~ msgstr "Wort"
+
+#~ msgid "Tree view"
+#~ msgstr "Baumansicht"
+
+#~ msgid "Top 15 users"
+#~ msgstr "Benutzer-Top-15"
+
+#~ msgid "Download"
+#~ msgstr "Download"
+
+#~ msgid "&gt;&gt;details"
+#~ msgstr "&gt;&gt;mehr&nbsp;Infos"

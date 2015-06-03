@@ -1,0 +1,210 @@
+/* dnaber, 2002-11-11 */
+
+.content {
+	margin: 10px;
+}
+	
+a:link {
+	text-decoration: none;
+}
+a:visited {
+	text-decoration: none;
+}
+a:hover {
+	text-decoration: none;
+	background-color: #dedede;
+}
+a:active {
+	text-decoration: none;
+}
+
+body {
+	font-family: sans-serif;
+	margin: 0px;
+}
+
+.myhover:hover {
+	background: #bbbbbb;
+}
+
+.myhoverbright:hover {
+	background: #dddddd;
+}
+
+.okay {
+	font-weight:bold;
+	background-color: #94ef94;
+	padding: 5px;
+}
+
+.error {
+	font-weight:bold;
+	background-color: #ff3567;
+	padding: 5px;
+}
+
+/* e.g. non-clickable ">> next" link: */
+.inactive {
+	color: #777777;
+}
+
+h1 {
+	font-size: 18px;
+	margin-top: 7px;
+	margin-bottom: 2px;
+}
+
+.navtable {
+	width: 100%;
+	background: #eeeeee;
+	margin-top: 3px;
+	padding-left: 5px;
+	padding-right: 5px;
+	border: solid;
+	border-width: 1px;
+	border-color: #DDD;
+}
+
+.bsp {
+	color: #555555;
+	font-weight: bold;
+}
+
+.shortcut {
+	color: #555555;
+	font-weight: bold;
+}
+
+.inp {
+	color: #555555;
+	font-weight: bold;
+}
+
+.kA {
+	color:#666666;
+}
+
+.newsdate {
+	font-weight: bold;
+	color:#666666;
+}
+
+/* edit actions: */
+.added {
+	font-weight: bold;
+	color: green;
+}
+
+.removed {
+	font-weight: bold;
+	text-decoration: line-through;
+	color: red;
+}
+
+/* "[+]" on tree.php */
+.openplus {
+	text-decoration: none;
+}
+
+.anonymous {
+	color: #777777;
+}
+
+.naviusername {
+	font-weight: bold;
+	color: #666666;
+}
+
+ul.tree {
+	list-style: none;
+}
+
+/* admin: */
+.light {
+	color: #666666;
+}
+.timewarn {
+	color: #cc4444;
+	font-weight: bold;
+}
+
+p.firstcompact {
+	margin-bottom: 0px;
+}
+
+p.compact {
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
+
+ul.compact {
+	margin-top: 0px;
+}
+
+.wiktionarymeaning {
+	font-weight:bold;
+	color: #999999;
+}
+
+.wiktionarymeaningref {
+	color: #666666;
+}
+
+.wiktionarylicense {
+	font-size: x-small;
+	color: #aaaaaa;
+	list-style: none;
+}
+
+.wikilicenselink {
+	font-size: x-small;
+	color: #888888;
+}
+
+/* overview.php */
+.supersynsethead {
+	font-size: small;
+	color: #555555;
+}
+.supersynset {
+	font-size: small;
+	color: #777777;
+}
+.synsetlist {
+	margin-top: 4px;
+	margin-bottom: 4px;
+}
+
+/* a-z.php */
+.allchars {
+	font-size: 130%;
+	margin: 0px;
+	padding: 0px;
+}
+
+/* news archive page */
+.newsYearDelimiter {
+	background-color: #eee;
+	font-weight: bold;
+	text-align: right;
+}
+
+.newsYearDelimiterDistance {
+	margin-top: 65px;
+}
+
+ul {
+	list-style-image: url(../images/bullet.png);
+}
+
+.simplePage {
+	margin-left: 25px;
+}
+
+.adstext a {
+	color: #5757ee;
+}
+
+.adstext {
+	color: #777;
+}

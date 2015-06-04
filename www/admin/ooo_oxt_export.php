@@ -18,11 +18,11 @@ $zip_command = "/usr/bin/zip";
 
 $lang_code = $lang."_".$lang2;
 
-include("../../include/phplib/prepend2.php3");
-include("../../include/tool.php");
+include("../include/phplib/prepend2.php3");
+include("../include/tool.php");
 
 $title = "OpenThesaurus admin interface: Build OOo 3.x thesaurus files";
-include("../../include/top.php");
+include("../include/top.php");
 
 print strftime("%H:%M:%S")." -- Starting OpenOffice.org 3.x export ...<br />\n";
 

@@ -12,15 +12,15 @@ if( ! (getenv('REMOTE_ADDR') == getenv('SERVER_ADDR')) ) {
 #### Configuration ###
 $lang = "de_DE";
 
-include("../../include/phplib/prepend.php3");
+include("../include/phplib/prepend.php3");
 $db = new DB_Thesaurus;
 $db_temp = new DB_Thesaurus;
-include("../../include/tool.php");
+include("../include/tool.php");
 
 # NOTE: requires an index on word_meanings.meaning_id, otherwise it's slow!!
 
 $title = "OpenThesaurus admin interface: Build OOo 1.x thesaurus files";
-include("../../include/top.php");
+include("../include/top.php");
 
 $wordfile = "wordlist.txt";
 $thesfile = "trimthes.txt";

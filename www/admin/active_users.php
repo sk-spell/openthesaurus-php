@@ -1,9 +1,9 @@
 <?php
-include("../../include/phplib/prepend.php3");
+include("../include/phplib/prepend.php3");
 page_open(array("sess" => "Thesaurus_Session", "auth" => "Thesaurus_Auth"));
 $db = new DB_Thesaurus;
 $db2 = new DB_Thesaurus;
-include("../../include/tool.php");
+include("../include/tool.php");
 
 if( $auth->auth['uname'] != 'admin' ) {
 	print "Access denied.";
@@ -11,7 +11,7 @@ if( $auth->auth['uname'] != 'admin' ) {
 }
 
 $title = "Most active users";
-include("../../include/top.php");
+include("../include/top.php");
 ?>
 
 <p><a href="active_users.php?limit=20">20</a>
@@ -57,6 +57,6 @@ $db->query($query);
 </table>
 
 <?php
-include("../../include/bottom.php");
+include("../include/bottom.php");
 page_close();
 ?>

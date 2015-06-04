@@ -1,13 +1,13 @@
 <?php
-include("../include/phplib/prepend.php3");
+include("./include/phplib/prepend.php3");
 $cancel_login = 1;
 page_open(array("sess" => "Thesaurus_Session", "auth" => "Thesaurus_Default_Auth"));
-include("../include/tool.php");
+include("./include/tool.php");
 $db = new DB_Thesaurus;
 
 $days = 7;
 $title = sprintf(_("OpenThesaurus - Most active users"), $days);
-include("../include/top.php");
+include("./include/top.php");
 ?>
 
 <table border="0" cellpadding="2" cellspacing="10">
@@ -66,11 +66,11 @@ function top_x($db, $top_x, $days) {
 <?php } ?>
 
 <br />
-<?php include("../include/textads_top_users.php"); ?>
+<?php include("./include/textads_top_users.php"); ?>
 
 <br />
 
 <?php
-include("../include/bottom.php");
+include("./include/bottom.php");
 page_close();
 ?>

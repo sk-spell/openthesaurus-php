@@ -1,8 +1,8 @@
 <?php
-include("../include/phplib/prepend.php3");
+include("./include/phplib/prepend.php3");
 $cancel_login = 1;
 page_open(array("sess" => "Thesaurus_Session", "auth" => "Thesaurus_Default_Auth"));
-include("../include/tool.php");
+include("./include/tool.php");
 $db = new DB_Thesaurus;
 $inner_db = new DB_Thesaurus;
 
@@ -15,7 +15,7 @@ if( ! array_key_exists('word', $_GET) ) {
 }
 
 $title = sprintf(_("Thesaurus Matches for '<span class=\"inp\">%s</span>'"), escape($_GET['word']));
-include("../include/top.php");
+include("./include/top.php");
 ?>
 
 
@@ -23,9 +23,9 @@ include("../include/top.php");
 <tr>
 	<td>
 	<?php 
-	include("../include/synsets.php");
+	include("./include/synsets.php");
 	if ($synmatches == 0) {
-		include("../include/levenshtein.php");
+		include("./include/levenshtein.php");
 	}
 	flush();
 	# test flush: sleep(5); 
@@ -38,22 +38,22 @@ include("../include/top.php");
 
 <br />
 
-<?php include("../include/baseforms.php"); ?>
+<?php include("./include/baseforms.php"); ?>
 
 <table cellpadding="0" cellspacing="0" width="100%" class="compact">
 <tr>
 	<td class="compact" width="35%" valign="top">
-		<?php include("../include/substring_matches.php"); ?>
+		<?php include("./include/substring_matches.php"); ?>
 		<?php if ($synmatches > 0) { ?>
 			<p class="compact"><strong><?php print _("Similarly spelled words from OpenThesaurus:"); ?></strong></p>
-			<?php include("../include/levenshtein.php"); ?>
+			<?php include("./include/levenshtein.php"); ?>
 		<?php } ?>
 	</td>
 	<td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
 	<td class="compact" width="65%" valign="top">
-		<?php include("../include/wikipedia_links.php"); ?>
-		<?php include("../include/wiktionary.php"); ?>
-		<?php include("../include/spellcheck.php"); ?>
+		<?php include("./include/wikipedia_links.php"); ?>
+		<?php include("./include/wiktionary.php"); ?>
+		<?php include("./include/spellcheck.php"); ?>
 	</td>
 </tr>
 </table>
@@ -73,7 +73,7 @@ include("../include/top.php");
 	<td class="compact" width="35%" valign="top">
 		<?php
 		if( $queryterm != "" ) {
-			include("../include/external_searches.php");
+			include("./include/external_searches.php");
 		}
 		?>
 	</td>
@@ -102,6 +102,6 @@ include("../include/top.php");
 
 <?php
 logSearch($db, $_GET['word'], $synmatches, 0, getEndTimer());
-include("../include/bottom.php");
+include("./include/bottom.php");
 page_close();
 ?>

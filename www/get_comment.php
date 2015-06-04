@@ -1,13 +1,13 @@
 <?php
-include("../include/phplib/prepend.php3");
+include("./include/phplib/prepend.php3");
 page_open(array("sess" => "Thesaurus_Session", "auth" => "Thesaurus_Auth"));
 $auth->login_if($auth->auth["uid"] == "nobody");
-include("../include/tool.php");
+include("./include/tool.php");
 $db = new DB_Thesaurus;
 $page = "get_delete_comment";
 
 $title = _("Comment on the deletion");
-include("../include/top.php");
+include("./include/top.php");
 ?>
 
 <form action="do_save.php" method="post" name="commentform">
@@ -38,6 +38,6 @@ document.forms['commentform']['comment'].focus();
 </script>
 
 <?php
-include("../include/bottom.php");
+include("./include/bottom.php");
 page_close();
 ?>

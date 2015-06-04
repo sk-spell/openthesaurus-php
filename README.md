@@ -44,7 +44,7 @@ will need to download the files from CVS at [Sourceforge](http://sourceforge.net
 ```
    (the more words your database contains, the higher these limits need to be)
 11. If you have a list of full form to base form mappings (English example: slept -> sleep, children -> child, etc.) you can import the words into the word_forms table and the mapping into the word_mapping table. This way people can search for a word's full forms and they will get the base form's synonyms as a result.
-12. To change the layout, see include/top.php, include/bottom.php and www/include/styles.css
+12. To change the layout, see include/top.php, include/bottom.php and www/themes/styles.css
 
 **NOTE:** when you import data, the values in db_sequence will have to
 be modified manually so they point to an unused ID for each table.

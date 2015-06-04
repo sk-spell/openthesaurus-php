@@ -1,7 +1,7 @@
 <?php
-include("../include/phplib/prepend.php3");
+include("./include/phplib/prepend.php3");
 $db = new DB_Thesaurus;
-include("../include/tool.php");
+include("./include/tool.php");
 
 // just to be sure, check this here, too:
 if( ! emailOkay(uservar('email')) ) { 
@@ -37,11 +37,11 @@ if( ! $ret ) {
 }
 
 $title = _("Sending Password Reminder");
-include("../include/top.php");
+include("./include/top.php");
 ?>
 
 <p><?php print _("A password reminder will soon be sent to your email address.") ?></p>
 
 <p><a href="./"><?php print _("Back to homepage") ?></a></p>
 
-<?php include("../include/bottom.php"); ?>
+<?php include("./include/bottom.php"); ?>

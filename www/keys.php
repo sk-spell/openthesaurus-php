@@ -1,10 +1,10 @@
 <?php
-include("../include/phplib/prepend.php3");
+include("./include/phplib/prepend.php3");
 $cancel_login = 1;
 page_open(array("sess" => "Thesaurus_Session", "auth" => "Thesaurus_Default_Auth"));
 $title = "OpenThesaurus Shortcuts";
 $page = "keys";
-include("../include/top.php");
+include("./include/top.php");
 ?>
 
 <p>Hinweis: alle Shortcuts wurden bisher nur mit 
@@ -30,4 +30,4 @@ Shortcuts angezeigt (man muss dann nicht mehr <span class="shortcut">Alt</span> 
 	<li><span class="shortcut">Alt + A</span>: &Auml;nderungen abschicken</li>
 </ul>
 
-<?php include("../include/bottom.php"); ?>
+<?php include("./include/bottom.php"); ?>

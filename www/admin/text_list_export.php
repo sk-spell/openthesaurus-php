@@ -4,9 +4,9 @@ if( ! (getenv('REMOTE_ADDR') == getenv('SERVER_ADDR')) ) {
 	return;
 }
 
-include("../../include/phplib/prepend.php3");
+include("../include/phplib/prepend.php3");
 $db = new DB_Thesaurus;
-include("../../include/tool.php");
+include("../include/tool.php");
 
 $query = sprintf("SELECT DISTINCT word
 	FROM words, word_meanings, meanings WHERE

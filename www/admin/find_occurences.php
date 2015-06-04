@@ -1,8 +1,8 @@
 <?php
-include("../../include/phplib/prepend.php3");
+include("../include/phplib/prepend.php3");
 page_open(array("sess" => "Thesaurus_Session", "auth" => "Thesaurus_Auth"));
 $db = new DB_Thesaurus;
-include("../../include/tool.php");
+include("../include/tool.php");
 
 if( $auth->auth['uname'] != 'admin' ) {
 	print "Access denied.";
@@ -10,7 +10,7 @@ if( $auth->auth['uname'] != 'admin' ) {
 }
 
 $title = "OpenThesaurus admin interface: multi-occurences";
-include("../../include/top.php");
+include("../include/top.php");
 
 $limit = 3;
 
@@ -47,6 +47,6 @@ foreach($ids as $id) {
 	$i++;
 }
 
-include("../../include/bottom.php");
+include("../include/bottom.php");
 page_close();
 ?>

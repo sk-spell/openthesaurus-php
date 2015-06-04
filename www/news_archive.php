@@ -1,12 +1,12 @@
 <?php
-include("../include/phplib/prepend.php3");
+include("./include/phplib/prepend.php3");
 $cancel_login = 1;
 page_open(array("sess" => "Thesaurus_Session", "auth" => "Thesaurus_Default_Auth"));
-include("../include/tool.php");
+include("./include/tool.php");
 $db = new DB_Thesaurus;
 
 $title = _("OpenThesaurus - News Archiv");
-include("../include/top.php");
+include("./include/top.php");
 ?>
 
 <table border="0" cellpadding="5" cellspacing="0">
@@ -313,9 +313,9 @@ include("../include/top.php");
 </tr>
 </table>
 
-<?php include("../include/textads_news_archive.php"); ?>
+<?php include("./include/textads_news_archive.php"); ?>
 
 <?php 
-include("../include/bottom.php"); 
+include("./include/bottom.php"); 
 page_close();
 ?>

@@ -1,7 +1,7 @@
 <?php
-include("../include/phplib/prepend.php3");
+include("./include/phplib/prepend.php3");
 $db = new DB_Thesaurus;
-include("../include/tool.php");
+include("./include/tool.php");
 
 if( ! emailOkay(uservar('email')) ) { 
 	print sprintf(_("Invalid email address '%s'."), escape(uservar('email')));
@@ -79,11 +79,11 @@ function generatePassword($length) {
 } 
 
 $title = _("Register");
-include("../include/top.php");
+include("./include/top.php");
 ?>
 
 <p><?php print sprintf(_("Thanks for registering. The password will be sent to <span class='inp'>%s</span>."), escape(uservar('email'))) ?></p>
 
 <p><a href="./"><?php print _("Back to homepage") ?></a></p>
 
-<?php include("../include/bottom.php"); ?>
+<?php include("./include/bottom.php"); ?>

@@ -1,8 +1,8 @@
 <?php
-include("../include/phplib/prepend.php3");
+include("./include/phplib/prepend.php3");
 page_open(array("sess" => "Thesaurus_Session", "auth" => "Thesaurus_Auth"));
 $db = new DB_Thesaurus;
-include("../include/tool.php");
+include("./include/tool.php");
 
 function shorten($str, $length=15) {
 	$str = substr($str, 0, $length);
@@ -11,7 +11,7 @@ function shorten($str, $length=15) {
 
 $title = _("Recent changes in the thesaurus");
 $no_text_decoration = 1;
-include("../include/top.php");
+include("./include/top.php");
 ?>
 
 <?php
@@ -90,6 +90,6 @@ if( $actions_limit > 500 ) {
 <br />
 
 <?php
-include("../include/bottom.php");
+include("./include/bottom.php");
 page_close();
 ?>

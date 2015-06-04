@@ -1,12 +1,12 @@
 <?php
-include("../include/phplib/prepend.php3");
+include("./include/phplib/prepend.php3");
 $cancel_login = 1;
 page_open(array("sess" => "Thesaurus_Session", "auth" => "Thesaurus_Default_Auth"));
-include("../include/tool.php");
+include("./include/tool.php");
 $db = new DB_Thesaurus;
 
 $title = _("OpenThesaurus - Statistics");
-include("../include/top.php");
+include("./include/top.php");
 ?>
 
 <br />
@@ -21,6 +21,6 @@ include("stats_output.html");
 </div>
 
 <?php 
-include("../include/bottom.php"); 
+include("./include/bottom.php"); 
 page_close();
 ?>

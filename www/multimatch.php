@@ -1,18 +1,18 @@
 <?php
-include("../include/phplib/prepend.php3");
+include("./include/phplib/prepend.php3");
 $cancel_login = 1;
 page_open(array("sess" => "Thesaurus_Session", "auth" => "Thesaurus_Default_Auth"));
-include("../include/tool.php");
+include("./include/tool.php");
 $db = new DB_Thesaurus;
 
 $word = $_GET['word'];
 $title = sprintf(_("Matches for '%s'"), escape($word));
 
 $stop_robots = 1;
-include("../include/top.php");
+include("./include/top.php");
 ?>
 
-<?php include("../include/synsets.php"); ?>
+<?php include("./include/synsets.php"); ?>
 
 <?php
 if( uservar('word') ) {
@@ -29,10 +29,10 @@ if( uservar('word') ) {
 
 <br />
 <?php
-include("../include/external_searches.php");
+include("./include/external_searches.php");
 
 logSearch($db, $word, $db->nf(), 0, getEndTimer());
 
-include("../include/bottom.php");
+include("./include/bottom.php");
 page_close();
 ?>

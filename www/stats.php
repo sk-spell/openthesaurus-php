@@ -3,8 +3,8 @@ if( isset($db) ) {
 	# called from index.php, don't re-initialise vars
 } else {
 	# called from cronjob
-	include("../include/phplib/prepend.php3");
-	include("../include/tool.php");
+	include("./include/phplib/prepend.php3");
+	include("./include/tool.php");
 	$db = new DB_Thesaurus;
 }
 ?>
@@ -80,5 +80,5 @@ if( isset($db) ) {
 		</table>
 
 		<?php
-		include("../include/rss.php");
+		include("./include/rss.php");
 		?>

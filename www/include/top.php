@@ -46,7 +46,7 @@ if( WEB_LANG == 'de_DE' ) {
 		<meta name="robots" content="noindex,nofollow" />
 	<?php } ?>
 	<meta http-equiv="content-type" content="text/html; charset=<?php print $htmlcharset ?>" />
-	<link href="<?php print BASE_URL ?>/include/styles.css" rel="stylesheet" type="text/css" />
+	<link href="<?php print BASE_URL ?>/themes/styles.css" rel="stylesheet" type="text/css" />
 	<link rel="shortcut icon" href="<?php print BASE_URL ?>/favicon.ico" />
 	<?php if( isset($no_text_decoration) && $no_text_decoration == 1 ) { ?>
 	<style type="text/css">

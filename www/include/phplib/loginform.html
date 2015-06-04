@@ -1,9 +1,9 @@
 <?php
 $login_page = 1;
 $page = "login";
-include("../include/tool.php");
+include("./include/tool.php");
 $htmlcharset = "utf-8";
-include("../include/top.php");
+include("./include/top.php");
 ?>
 
 <p><?php print _("You can use this form to suggest words without being logged in. These words will be checked before they are included in OpenThesaurus."); ?></p>
@@ -102,5 +102,5 @@ if (document.forms['loginform'][0].value != '') {
 </script>
 
 <?php
-include("../include/bottom.php");
+include("./include/bottom.php");
 ?>

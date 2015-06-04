@@ -1,8 +1,8 @@
 <?php
-include("../../include/phplib/prepend.php3");
+include("../include/phplib/prepend.php3");
 page_open(array("sess" => "Thesaurus_Session", "auth" => "Thesaurus_Auth"));
 $db = new DB_Thesaurus;
-include("../../include/tool.php");
+include("../include/tool.php");
 
 if( $auth->auth['uname'] != 'admin' ) {
 	print "Access denied.";
@@ -15,7 +15,7 @@ function shorten($str) {
 }
 
 $title = "OpenThesaurus admin interface: suggest words to import";
-include("../../include/top.php");
+include("../include/top.php");
 
 if( array_key_exists('text', $_POST) ) {
 
@@ -110,6 +110,6 @@ if( array_key_exists('text', $_POST) ) {
 <?php } ?>
 
 <?php
-include("../../include/bottom.php");
+include("../include/bottom.php");
 page_close();
 ?>

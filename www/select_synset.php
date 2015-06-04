@@ -1,14 +1,14 @@
 <?php
-include("../include/phplib/prepend.php3");
+include("./include/phplib/prepend.php3");
 $cancel_login = 1;
 page_open(array("sess" => "Thesaurus_Session", "auth" => "Thesaurus_Default_Auth"));
-include("../include/tool.php");
+include("./include/tool.php");
 $db = new DB_Thesaurus;
 
 $word = trim($_GET['super_new']);
 $title = sprintf(_("Synsets with '%s'"), escape($word));
 
-include("../include/top.php");
+include("./include/top.php");
 ?>
 
 <form action="do_save.php" method="post">
@@ -92,6 +92,6 @@ if( array_search($word, $syns) ) {
 <br />
 
 <?php
-include("../include/bottom.php");
+include("./include/bottom.php");
 page_close();
 ?>

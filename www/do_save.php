@@ -1,8 +1,8 @@
 <?php
-include("../include/phplib/prepend.php3");
+include("./include/phplib/prepend.php3");
 page_open(array("sess" => "Thesaurus_Session", "auth" => "Thesaurus_Auth"));
 $auth->login_if($auth->auth["uid"] == "nobody");
-include("../include/tool.php");
+include("./include/tool.php");
 $db = new DB_Thesaurus;
 
 ### FIXME: more checks?
@@ -206,7 +206,7 @@ foreach( $del_list as $id ) {
 
 if( uservar('do_remove') == 1 ) {
 	$title = _("Synset removed");
-	include("../include/top.php");
+	include("./include/top.php");
 	?>
 	<p><?php print sprintf(_("The synset <span class='inp'>%s</span> has been deleted."), 
 			join(', ', getSynset(uservar('meaning_id')))) ?></p>
@@ -214,7 +214,7 @@ if( uservar('do_remove') == 1 ) {
 	<p><a href="./"><?php print _("Return to homepage") ?></a></p>
 
 	<?php
-	include("../include/bottom.php");
+	include("./include/bottom.php");
 	page_close();
 	return;
 } else {

@@ -1,7 +1,7 @@
 <?php 
 # This file must be <link>ed from all page so the browser
 # can auto-detect our search url:
-include("../include/phplib/prepend.php3");
+include("./include/phplib/prepend.php3");
 header("Content-Type: application/opensearchdescription+xml");
 print '<?xml version="1.0" encoding="UTF-8"?>';
 print "\n";

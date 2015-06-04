@@ -7,8 +7,8 @@ if( ! (getenv('REMOTE_ADDR') == getenv('SERVER_ADDR')) ) {
 	return;
 }
 
-include("../../include/phplib/prepend.php3");
-include("../../include/tool.php");
+include("../include/phplib/prepend.php3");
+include("../include/tool.php");
 $db = new DB_Thesaurus;
 
 $start = getmicrotime();

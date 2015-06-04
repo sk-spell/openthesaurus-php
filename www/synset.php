@@ -1,8 +1,8 @@
 <?php
-include("../include/phplib/prepend.php3");
+include("./include/phplib/prepend.php3");
 $cancel_login = 1;
 page_open(array("sess" => "Thesaurus_Session", "auth" => "Thesaurus_Default_Auth"));
-include("../include/tool.php");
+include("./include/tool.php");
 $db = new DB_Thesaurus;
 $inner_db = new DB_Thesaurus;
 
@@ -93,7 +93,7 @@ $query = sprintf("SELECT words.id AS id, word_meanings.id AS wmid,
 	ORDER BY meaning_id, word", $meaning_id);
 $db->query($query);
 
-include("../include/top.php");
+include("./include/top.php");
 ?>
 
 <?php 
@@ -447,6 +447,6 @@ if( isset($_GET['word']) ) {
 	logSearch($db, $_GET['word'], $matches_for_log, 0, getEndTimer());
 }
 
-include("../include/bottom.php");
+include("./include/bottom.php");
 page_close();
 ?>

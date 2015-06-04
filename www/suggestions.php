@@ -1,8 +1,8 @@
 <?php
-include("../include/phplib/prepend.php3");
+include("./include/phplib/prepend.php3");
 $cancel_login = 1;
 page_open(array("sess" => "Thesaurus_Session", "auth" => "Thesaurus_Default_Auth"));
-include("../include/tool.php");
+include("./include/tool.php");
 $db = new DB_Thesaurus;
 $inner_db = new DB_Thesaurus;
 
@@ -13,7 +13,7 @@ if( ! array_key_exists('word', $_GET) ) {
 
 $title = sprintf(_("No synonyms found for '%s'"), escape($_GET['word']));
 
-include("../include/top.php");
+include("./include/top.php");
 ?>
 
 <?php
@@ -37,15 +37,15 @@ include("../include/top.php");
 </form>
 
 <?php
-include("../include/baseforms.php");
+include("./include/baseforms.php");
 ?>
 
 <?php
-include("../include/levenshtein.php");
+include("./include/levenshtein.php");
 ?>
 
 <?php
-include("../include/substring_matches.php");
+include("./include/substring_matches.php");
 ?>
 
 <?php if( uservar('word') && trim(uservar('word')) != "" ) { ?>
@@ -64,6 +64,6 @@ if( $queryterm != "" ) {
 	externalSearchLinks($_GET['word']);
 }
 logSearch($db, $_GET['word'], 0, 0, getEndTimer());
-include("../include/bottom.php");
+include("./include/bottom.php");
 page_close();
 ?>

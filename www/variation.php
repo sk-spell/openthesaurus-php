@@ -1,8 +1,8 @@
 <?php
-include("../include/phplib/prepend.php3");
+include("./include/phplib/prepend.php3");
 $cancel_login = 1;
 page_open(array("sess" => "Thesaurus_Session", "auth" => "Thesaurus_Default_Auth"));
-include("../include/tool.php");
+include("./include/tool.php");
 $db = new DB_Thesaurus;
 
 if ($_GET['lang'] == 'at') {
@@ -16,7 +16,7 @@ if ($_GET['lang'] == 'at') {
 	exit;
 }
 
-include("../include/top.php");
+include("./include/top.php");
 ?>
 
 <?php if ($_GET['lang'] == 'at') { ?>
@@ -71,6 +71,6 @@ while( $db->next_record() ) {
 </ul>
 
 <?php
-include("../include/bottom.php");
+include("./include/bottom.php");
 page_close();
 ?>

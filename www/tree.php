@@ -1,8 +1,8 @@
 <?php
-include("../include/phplib/prepend.php3");
+include("./include/phplib/prepend.php3");
 $cancel_login = 1;
 page_open(array("sess" => "Thesaurus_Session", "auth" => "Thesaurus_Default_Auth"));
-include("../include/tool.php");
+include("./include/tool.php");
 $db = new DB_Thesaurus;
 $inner_db = new DB_Thesaurus;
 
@@ -72,7 +72,7 @@ function printSubordinateSynsets($db, $inner_db, $id, $top_id) {
 }
 
 $title = _("OpenThesaurus Tree");
-include("../include/top.php");
+include("./include/top.php");
 ?>
 
 <p>
@@ -126,9 +126,9 @@ $db->query($query);
 
 <br />
 
-<?php include("../include/textads_tree.php"); ?>
+<?php include("./include/textads_tree.php"); ?>
 
 <?php
-include("../include/bottom.php");
+include("./include/bottom.php");
 page_close();
 ?>

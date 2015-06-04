@@ -1,8 +1,8 @@
 <?php
-include("../include/phplib/prepend.php3");
+include("./include/phplib/prepend.php3");
 page_open(array("sess" => "Thesaurus_Session", "auth" => "Thesaurus_Auth"));
 $auth->login_if($auth->auth["uid"] == "nobody");
-include("../include/tool.php");
+include("./include/tool.php");
 $db = new DB_Thesaurus;
 $inner_db = new DB_Thesaurus;
 
@@ -101,7 +101,7 @@ if ($changed) {
 	return;
 }
 
-include("../include/top.php");
+include("./include/top.php");
 ?>
 
 <form action="synset_detail.php" method="post">
@@ -143,6 +143,6 @@ include("../include/top.php");
 <p><a href="synset.php?id=<?php print escape(uservar('mid')) ?>"><?php print _("Back to synset") ?></a></p>
 
 <?php
-include("../include/bottom.php");
+include("./include/bottom.php");
 page_close();
 ?>

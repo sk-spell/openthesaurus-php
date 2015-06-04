@@ -23,10 +23,10 @@ $min_depth = 4;
 # FIXME -- not yet properly tested: ging -> gehen etc. (requires word_forms, word_mappings tables):
 $full_forms = 0;
 
-include("../../include/phplib/prepend.php3");
+include("../include/phplib/prepend.php3");
 $db = new DB_Thesaurus;
 $db2 = new DB_Thesaurus;
-include("../../include/tool.php");
+include("../include/tool.php");
 
 $swiss_spelling = 0;			# replace "ß" by "ss" (makes sense only for German)?
 if (sizeof($argv) == 2 && $argv[1] == "de_CH") {
@@ -85,7 +85,7 @@ function swissSpelling($word) {
 }
 
 $title = "OpenThesaurus admin interface: Build OOo 2.0 thesaurus files";
-include("../../include/top.php");
+include("../include/top.php");
 
 print strftime("%H:%M:%S")." -- Building data...<br />\n";
 

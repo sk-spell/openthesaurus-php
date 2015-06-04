@@ -1,8 +1,8 @@
 <?php
-include("../../include/phplib/prepend.php3");
+include("../include/phplib/prepend.php3");
 page_open(array("sess" => "Thesaurus_Session", "auth" => "Thesaurus_Auth"));
 $db = new DB_Thesaurus;
-include("../../include/tool.php");
+include("../include/tool.php");
 
 if( $auth->auth['uname'] != 'admin' ) {
 	print "Access denied.";
@@ -16,7 +16,7 @@ function shorten($str, $length=15) {
 
 $title = "OpenThesaurus admin interface";
 $no_text_decoration = 1;
-include("../../include/top.php");
+include("../include/top.php");
 
 # get last display date of this page:
 $query = sprintf("SELECT value FROM admin_checks
@@ -101,7 +101,7 @@ $db->query($query);
 			of <?php print $db->nf() ?>
 			(<a href="users.php">show all</a>):</strong>
 		<?php
-		include("../../include/admin/users_include.php");
+		include("../include/admin/users_include.php");
 		?>
 
 		<?php
@@ -357,6 +357,6 @@ if( $db->nf() > 0 ) {
 <br />
 
 <?php
-include("../../include/bottom.php");
+include("../include/bottom.php");
 page_close();
 ?>

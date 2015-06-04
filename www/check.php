@@ -1,13 +1,13 @@
 <?php
-include("../include/phplib/prepend.php3");
+include("./include/phplib/prepend.php3");
 $cancel_login = 1;
 page_open(array("sess" => "Thesaurus_Session", "auth" => "Thesaurus_Default_Auth"));
-include("../include/tool.php");
+include("./include/tool.php");
 $db = new DB_Thesaurus;
 
 $title = _("OpenThesaurus: Check synsets");
 $stop_robots = 1;
-include("../include/top.php");
+include("./include/top.php");
 
 if (!array_key_exists('limit', $_GET)) {
 	$limit = 5;
@@ -73,6 +73,6 @@ $db->query($query);
 </div>
 
 <?php 
-include("../include/bottom.php"); 
+include("./include/bottom.php"); 
 page_close();
 ?>

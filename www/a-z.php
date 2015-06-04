@@ -1,15 +1,15 @@
 <?php
-include("../include/phplib/prepend.php3");
+include("./include/phplib/prepend.php3");
 $cancel_login = 1;
 page_open(array("sess" => "Thesaurus_Session", "auth" => "Thesaurus_Default_Auth"));
-include("../include/tool.php");
+include("./include/tool.php");
 $db = new DB_Thesaurus;
 
 $disable_title = 1;
 $title = _("OpenThesaurus: All Words A-Z");
 $pagetitle = _("Words A-Z");
 $stop_robots = 1;
-include("../include/top.php");
+include("./include/top.php");
 ?>
 
 <h1><?php print $pagetitle ?></h1>
@@ -138,6 +138,6 @@ if ($subchar) {
 <br />
 
 <?php
-include("../include/bottom.php");
+include("./include/bottom.php");
 page_close();
 ?>

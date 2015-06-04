@@ -1,15 +1,15 @@
 <?php
-include("../include/phplib/prepend.php3");
+include("./include/phplib/prepend.php3");
 $cancel_login = 1;
 page_open(array("sess" => "Thesaurus_Session", "auth" => "Thesaurus_Default_Auth"));
-include("../include/tool.php");
+include("./include/tool.php");
 $db = new DB_Thesaurus;
 
 $disable_title = 1;
 $pagetitle = _("OpenThesaurus (homepage headline)");
 $title = _("OpenThesaurus (homepage title)");
 $page = "homepage";
-include("../include/top.php");
+include("./include/top.php");
 ?>
 
 <br />
@@ -90,7 +90,7 @@ include("../include/top.php");
 		<table>
 		<tr>
 			<td style="text-align:left">
-				<?php include("../include/textads_homepage.php"); ?>
+				<?php include("./include/textads_homepage.php"); ?>
 			</td>
 		</tr>
 		</table>
@@ -106,7 +106,7 @@ include("../include/top.php");
 </script>
 
 <?php 
-include("../include/bottom.php"); 
+include("./include/bottom.php"); 
 page_close();
 ?>
  

@@ -1,7 +1,7 @@
 <?php
-include("../include/phplib/prepend.php3");
+include("./include/phplib/prepend.php3");
 $title = _("OpenThesaurus - Register");
-include("../include/top.php");
+include("./include/top.php");
 ?>
 
 <p><?php print _("You need to register to log in if you want write access. A generated password will be sent to your email address.") ?></p>
@@ -35,4 +35,4 @@ include("../include/top.php");
 
 <br />
 
-<?php include("../include/bottom.php"); ?>
+<?php include("./include/bottom.php"); ?>

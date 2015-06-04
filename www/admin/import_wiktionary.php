@@ -9,12 +9,12 @@ if( ! (getenv('REMOTE_ADDR') == getenv('SERVER_ADDR')) ) {
 	return;
 }
 
-include("../../include/phplib/prepend.php3");
+include("../include/phplib/prepend.php3");
 $db = new DB_Thesaurus;
-include("../../include/tool.php");
+include("../include/tool.php");
 
 $title = "OpenThesaurus admin interface: Import Wiktionary";
-include("../../include/top.php");
+include("../include/top.php");
 
 function clean($s) {
 	$s = preg_replace("/&lt;!--.*?--&gt;/", "", $s);

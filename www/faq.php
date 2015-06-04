@@ -1,10 +1,10 @@
 <?php
-include("../include/phplib/prepend.php3");
+include("./include/phplib/prepend.php3");
 $cancel_login = 1;
 page_open(array("sess" => "Thesaurus_Session", "auth" => "Thesaurus_Default_Auth"));
 $title = "OpenThesaurus FAQ";
 $page = "faq";
-include("../include/top.php");
+include("./include/top.php");
 ?>
 
 <br />
@@ -130,7 +130,7 @@ fclose($fp);
 $date_kword = strftime("%Y-%m-%d %H:%M", $s_array["mtime"]);
 $size_kword = sprintf("%.0f", $s_array["size"]/1000);
 
-// TODO: include("../include/download.php") ?
+// TODO: include("./include/download.php") ?
 addFAQ("Kann ich die Thesaurus-Daten herunterladen?",
 	"<p>Ja. Der Thesaurus von OpenOffice.org allerdings basiert bereits auf den OpenThesaurus-Daten, eine manuelle
 	Installation ist also nur interessant, wenn man aktuellere Daten haben möchte:</p>
@@ -407,10 +407,10 @@ foreach($q_list as $item) {
 <br />
 <p><i>Page updated: 2008-11-25</i></p>
 
-<?php include("../include/textads_faq.php"); ?>
+<?php include("./include/textads_faq.php"); ?>
 
 <!-- enables scrolling to the bottom entries: -->
 <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
 <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
 
-<?php include("../include/bottom.php"); ?>
+<?php include("./include/bottom.php"); ?>

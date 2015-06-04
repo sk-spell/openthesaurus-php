@@ -1,14 +1,14 @@
 <?php
-include("../include/phplib/prepend.php3");
+include("./include/phplib/prepend.php3");
 page_open(array("sess" => "Thesaurus_Session", "auth" => "Thesaurus_Auth"));
 $auth->login_if($auth->auth["uid"] == "nobody");
-include("../include/tool.php");
+include("./include/tool.php");
 $db = new DB_Thesaurus;
 $inner_db = new DB_Thesaurus;
 
 $title = _("Personal Settings");
 $page = "prefs";
-include("../include/top.php");
+include("./include/top.php");
 
 $msg = "";
 if( array_key_exists('change_settings', $_POST) ) {
@@ -119,6 +119,6 @@ $db->next_record();
 </table>
 
 <?php
-include("../include/bottom.php");
+include("./include/bottom.php");
 page_close();
 ?>

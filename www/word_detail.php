@@ -1,8 +1,8 @@
 <?php
-include("../include/phplib/prepend.php3");
+include("./include/phplib/prepend.php3");
 $cancel_login = 1;
 page_open(array("sess" => "Thesaurus_Session", "auth" => "Thesaurus_Default_Auth"));
-require_once("../include/tool.php");
+require_once("./include/tool.php");
 if (!WORD_DETAIL_WITHOUT_AUTH && $auth->auth["uid"] == "nobody") {
 	$auth->login_if(true);
 	return;
@@ -226,7 +226,7 @@ function printUsage() {
 	print $first;
 }
 
-include("../include/top.php");
+include("./include/top.php");
 ?>
 
 <form action="word_detail.php" method="post">
@@ -326,8 +326,8 @@ include("../include/top.php");
 
 <?php 
 $_GET['word'] = $word;
-include("../include/external_searches.php"); 
+include("./include/external_searches.php"); 
 
-include("../include/bottom.php");
+include("./include/bottom.php");
 page_close();
 ?>

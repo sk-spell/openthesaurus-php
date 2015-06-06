@@ -9,6 +9,7 @@ if( ! (getenv('REMOTE_ADDR') == getenv('SERVER_ADDR')) ) {
 	return;
 }
 
+chdir(dirname(__FILE__));
 #### Configuration ###
 $lang = "de_DE";
 

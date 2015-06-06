@@ -9,6 +9,7 @@ if( ! (getenv('REMOTE_ADDR') == getenv('SERVER_ADDR')) ) {
 	return;
 }
 
+chdir(dirname(__FILE__));
 #### Configuration ###
 $lang = "de";		// language of the thesaurus data
 $lang2 = "DE";		// second part of "de_DE"

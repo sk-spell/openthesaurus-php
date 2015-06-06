@@ -5,6 +5,7 @@ if( ! (getenv('REMOTE_ADDR') == getenv('SERVER_ADDR')) ) {
 	return;
 }
 
+chdir(dirname(__FILE__));
 include("../include/phplib/prepend.php3");
 $db = new DB_Thesaurus;
 include("../include/tool.php");

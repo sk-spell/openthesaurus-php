@@ -85,7 +85,7 @@ class Session {
   ## one may provide the new session id as a parameter (not recommended).
 
   function get_id($id = "") {
-    global $HTTP_COOKIE_VARS, $HTTP_GET_VARS, $HTTP_POST_VARS, $QUERY_STRING;
+    global $_COOKIE, $HTTP_GET_VARS, $HTTP_POST_VARS, $QUERY_STRING;
     $newid=true;
  
     $this->name = $this->cookiename==""?$this->classname:$this->cookiename;
@@ -98,7 +98,7 @@ class Session {
             $id = isset($HTTP_POST_VARS[$this->name]) ? $HTTP_POST_VARS[$this->name] : "";
         break;
         case "cookie":
-          $id = isset($HTTP_COOKIE_VARS[$this->name]) ? $HTTP_COOKIE_VARS[$this->name] : "";
+          $id = isset($_COOKIE[$this->name]) ? $_COOKIE[$this->name] : "";
         break;
         default:
           die("This has not been coded yet.");
@@ -153,7 +153,7 @@ class Session {
   ## Stop using the current session id (unset cookie, ...) and
   ## abandon a session.
   function put_id() {
-    global $HTTP_COOKIE_VARS;
+    global $_COOKIE;
  
     $this->name = $this->cookiename==""?$this->classname:$this->cookiename;
  
@@ -168,7 +168,7 @@ class Session {
  
       default:
             SetCookie($this->name, "", 0, "/", $this->cookie_domain);
-            $HTTP_COOKIE_VARS[$this->name] = "";
+            $_COOKIE[$this->name] = "";
       break;
     }
   }
@@ -259,7 +259,7 @@ class Session {
   ## to be saved as an array of strings).
   ##
   ## You don't need to know...
-  function serialize($prefix, $str) {
+  function serialize($prefix, &$str) {
     static $t,$l,$k;
 
     ## Determine the type of $$prefix
@@ -272,7 +272,7 @@ class Session {
         $str .= "\$$prefix = array(); ";
         while ( "array" == $l ) {
           ## Structural recursion
-          $this->serialize($prefix."['".ereg_replace("([\\'])", "\\\\1", $k)."']", &$str);
+          $this->serialize($prefix."['".ereg_replace("([\\'])", "\\\\1", $k)."']", $str);
           eval("\$l = gettype(list(\$k)=each(\$$prefix));");
         }
 
@@ -283,7 +283,7 @@ class Session {
         $str.="\$$prefix = new $k; ";
         while ( $l ) {
           ## Structural recursion.
-          $this->serialize($prefix."->".$l,&$str);
+          $this->serialize($prefix."->".$l,$str);
           eval("\$l = next(\$${prefix}->persistent_slots);");
         }
 
@@ -314,14 +314,14 @@ class Session {
   function freeze() {
     $str="";
 
-    $this->serialize("this->in",&$str);
-    $this->serialize("this->pt",&$str);
+    $this->serialize("this->in",$str);
+    $this->serialize("this->pt",$str);
 
     reset($this->pt);
     while ( list($thing) = each($this->pt) ) {
       $thing=trim($thing);
       if ( $thing ) {
-        $this->serialize("GLOBALS['".$thing."']",&$str);
+        $this->serialize("GLOBALS['".$thing."']",$str);
       }
     }
     
@@ -363,7 +363,7 @@ class Session {
   }
 
   function reimport_cookie_vars() {
-    $this->reimport_any_vars("HTTP_COOKIE_VARS");
+    $this->reimport_any_vars("_COOKIE");
   }
 
   function reimport_any_vars($arrayname) {
@@ -394,11 +394,11 @@ class Session {
   }
 
   function release_token(){ 
-    global $HTTP_COOKIE_VARS, $HTTP_GET_VARS, $HTTP_HOST, $HTTPS;
+    global $_COOKIE, $HTTP_GET_VARS, $HTTP_HOST, $HTTPS;
     if (   isset($this->fallback_mode)
     && ( "get" == $this->fallback_mode ) 
     && ( "cookie" == $this->mode )
-    && ( ! isset($HTTP_COOKIE_VARS[$this->name]) ) ) {
+    && ( ! isset($_COOKIE[$this->name]) ) ) {
       if ( isset($HTTP_GET_VARS[$this->name]) ) {
         $this->mode = $this->fallback_mode;
       } else {

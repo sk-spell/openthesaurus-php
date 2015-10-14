@@ -220,7 +220,7 @@ while( $db->next_record() ) {
 			&nbsp;
 			<span class="myhover"><input id="<?php print "del$i" ?>" type="radio" name="word_<?php print $db->f('id') ?>" 
 				value="delete" /><label for="<?php print "del$i" ?>"><?php print _("remove word from synset") ?></label></span>
-			<? if( strpos(DEFAULT_SEARCH, "synset") === false ) { ?>
+			<?php if( strpos(DEFAULT_SEARCH, "synset") === false ) { ?>
 				&nbsp;
 				<a href="overview.php?word=<?php print urlencode($orig_word) ?>"><?php print _("search word") ?></a>
 			<?php } ?>

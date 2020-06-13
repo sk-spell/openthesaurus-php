@@ -763,12 +763,17 @@
 		return $string;
 	}
 
+	function html_escape($html_escape) {
+        $html_escape =  htmlspecialchars($html_escape, ENT_QUOTES | ENT_HTML5, 'UTF-8');
+        return $html_escape;
+    }
+
 	function myaddslashes($st) {
 		if (get_magic_quotes_gpc()) {
 			$st = stripslashes($st);
 		}
 		if (!is_numeric($st)) {
-			$st = mysql_real_escape_string($st);
+			$st = html_escape($st);
 		}
 		return $st;
 	}

@@ -4,7 +4,7 @@
  *
  * Jan 1999-2000 Alexander Aulbach for Main Media
  *
- * $Id: layout_html.inc,v 1.1 2003/04/15 22:31:02 daniel Exp $
+ * $Id: layout_html.inc,v 1.4 2002/08/07 19:31:33 layne_weathers Exp $
  *
  * This Lib is used for the default representation of a page.
  * It has to be extended for own layout-design
@@ -76,7 +76,7 @@ class Layout {
 	##
 	## these vars are needed for generating an IMG-Tag
 	## layouturl: s.th. like "http://hugo.bla/"
-	## layoutpath: if empty it will be set on first call to $DOCUMENT_ROOT
+	## layoutpath: if empty it will be set on first call to DOCUMENT_ROOT
 	##
 	var $layouturl = '';
 	var $layoutpath = ''; 
@@ -613,7 +613,7 @@ class Layout {
 	##          - Handling of pictures, which are not existing on this
 	##            server (hm, this is difficult!)
 	function doc_pic ($a,$showdetails=false,$force=false) {
-	GLOBAL $DOCUMENT_ROOT;
+	GLOBAL $HTTP_SERVER_VARS;
 		$SRC=$a[SRC];
 		$path=$a[path];
 		$HREF=$a[HREF];
@@ -639,7 +639,7 @@ class Layout {
 	    if (preg_match("/^\//",$SRC)) {
 	    	## if unset, assume DOCUMENT_ROOT to be the path
 	    	if (!$this->layoutpath) {
-	    		$this->layoutpath=$GLOBALS[DOCUMENT_ROOT];
+	    		$this->layoutpath = $HTTP_SERVER_VARS["DOCUMENT_ROOT"];
 	    	}
 			$SRC= $this->layouturl . $SRC;
 			$path=$this->layoutpath . $path;
@@ -661,7 +661,7 @@ class Layout {
 		}
 		$this->defval($BORDER,    $this->picture_def['BORDER']);
 		$this->defval($ALIGN,     $this->picture_def['ALIGN']);
-		$this->defval(&$HVSPACE,   $this->picture_def['HVSPACE']);
+		$this->defval($HVSPACE,   $this->picture_def['HVSPACE']);
 		$this->defval($ALT,       $this->picture_def['ALT']);
 
 		$r.=($BORDER!='') ? sprintf($this->picture['BORDER'],$BORDER) : '';

@@ -8,7 +8,7 @@
  * $Id: prepend.php3,v 1.10 2007/03/05 22:25:40 dnaber Exp $
  *
  */ 
-	
+
 error_reporting(E_ALL);
 list($usec, $sec) = explode(" ", microtime()); 
 $time_start_tmp = ((float)$usec + (float)$sec);
@@ -49,7 +49,7 @@ if( isset($_COOKIE['thes_lang'])) {
 }
 
 #You might need to comment this in to make utf-8 work:
-#bind_textdomain_codeset('messages',"UTF-8");
-bindtextdomain('messages', '../include/locale');
+bind_textdomain_codeset('messages', "UTF-8");
+bindtextdomain('messages', './include/locale');
 textdomain('messages');
 ?>

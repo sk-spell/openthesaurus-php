@@ -4,7 +4,7 @@
  *
  * © 1998 Alex Aulbach
  *
- * $Id: tree.inc,v 1.1 2003/04/15 22:31:02 daniel Exp $
+ * $Id: tree.inc,v 1.3 2002/04/02 23:23:12 layne_weathers Exp $
  *
  * This class needs a generated assoc array in this form:
  *
@@ -41,11 +41,11 @@ class Tree {
 
 	var $prfx=array();
 	var $sufx=array();
-	var $outp;
+	var $outp="";
 	var $flags;
 
 	function build_tree () {
-	## Dis function must be overriden by user!
+	## This function must be overridden by user!
 	## Result should fill $this->tree
 	## Perhaps it is easier to use this function in a recursive manner
 	## e.g. recursive scanning of directory structure.
@@ -121,6 +121,8 @@ class Tree {
 		if ($path) {
 			$index=implode("\"][\"",explode($this->delimiter,$path));
 			$index = "[\"${index}\"]";
+		} else {
+			$index="";
 		}
 		return($index);
 	}
@@ -148,7 +150,7 @@ class Tree {
 	######################################################
 	## Same as path_to_index and path_to_child but only
 	## working on path
-   ##
+	##
 
 	function path_add ($path,$key) {
 		$key = preg_replace("/\"/", "\\\"", $key);
@@ -182,6 +184,11 @@ class Tree {
 	# These functions are all user definable
 	# I have made a little example, of how to make a simple
 	# explorer like output
+	#
+	# These functions attempt to be session-aware. They
+	# look for a global variable called $sess and if it
+	# is set they generate relative URLs containing the
+	# session ID.
 
 	function starttree () {
 #DEB		echo "!!! STARTREE<BR>";
@@ -191,18 +198,26 @@ class Tree {
 
 
 	function growtree ($key,$value,$path,$depth,$count,$pcount) {
+		global $sess;
 #DEB		echo ">>> GROWTREE<BR>";
 		$this->outp.= "<TT>" . join($this->prfx,"");
 		if ($this->flag) {
 			$this->outp.="^----";
 		} elseif ($count==$pcount) {
-			$this->outp.="&#160;\---";
+			$this->outp.="&#160;\\---";
 		} else {
 			$this->outp.="O----";
 		}
-		$this->outp.= sprintf("</TT> %s->'<A HREF=\"?val=%s\">%s</A>'".
+		if (isset($sess)) {
+			$query_string = $sess->url(getenv("PHP_SELF"));
+			$query_string .= $sess->mode == "get" ? "&" : "?";
+			$query_string .= "val=" . urlencode($value);
+		} else {
+			$query_string = getenv("PHP_SELF") . "?val=" . urlencode($value);
+		}
+		$this->outp.= sprintf("</TT> %s->'<A HREF=\"%s\">%s</A>'".
 		     " : '%s' (%s) [%s/%s]<BR>\n",
-		     $key,URLEncode($value),$value,$path,$depth,$pcount,$count);
+		     $key,$query_string,$value,$path,$depth,$pcount,$count);
 		if ($count > $pcount) {
 			$this->prfx[$depth]="|&#160;&#160;&#160;&#160;";
 		} else {
@@ -212,18 +227,26 @@ class Tree {
 	}
 
 	function leaftree ($key,$value,$path,$depth,$count,$pcount) {
+		global $sess;
 #DEB	echo "--- LEAFTREE<BR>";
 		$this->outp.= "<TT>" . join($this->prfx,"");
 		if ($this->flag) {
 			$this->outp.="*----";
 		} elseif ($count==$pcount) {
-			$this->outp.="&#160;\---";
+			$this->outp.="&#160;\\---";
 		} else {
 			$this->outp.="+----";
 		}
-		$this->outp.= sprintf("</TT> %s->'<A HREF=\"?val=%s\">%s</A>'".
+		if (isset($sess)) {
+			$query_string = $sess->url(getenv("PHP_SELF"));
+			$query_string .= $sess->mode == "get" ? "&" : "?";
+			$query_string .= "val=" . urlencode($value);
+		} else {
+			$query_string = getenv("PHP_SELF") . "?val=" . urlencode($value);
+		}
+		$this->outp.= sprintf("</TT> %s->'<A HREF=\"%s\">%s</A>'".
 		     " : '%s' (%s) [%s/%s]<BR>\n",
-		     $key,URLEncode($value),$value,$path,$depth,$pcount,$count);
+		     $key,$query_string,$value,$path,$depth,$pcount,$count);
 		$this->flag=false;
 	}
 

@@ -6,7 +6,7 @@
 ##
 ## Copyright (c) 1998-2000 Sascha Schumann <sascha@schumann.cx>
 ## 
-## $Id: ct_sql.inc,v 1.1 2003/04/15 22:31:02 daniel Exp $
+## $Id: ct_sql.inc,v 1.6 2005/02/19 15:19:35 layne_weathers Exp $
 ##
 ## PHPLIB Data Storage Container using a SQL database
 ##
@@ -73,8 +73,6 @@ class CT_Sql {
     $name = addslashes($name);
 
     ## update duration of visit
-    global $HTTP_REFERER, $HTTP_USER_AGENT, $REMOTE_ADDR;
-
     $now = date("YmdHis", time());
     $uquery = sprintf("update %s set val='%s', changed='%s' where sid='%s' and name='%s'",
       $this->database_table,
@@ -82,7 +80,7 @@ class CT_Sql {
       $now,
       $id,
       $name);
-    $squery = sprintf("select count(*) from %s where val='%s' and changed='%s' and sid='%s' and name='%s'",
+    $squery = sprintf("select count(sid) count from %s where val='%s' and changed='%s' and sid='%s' and name='%s'",
       $this->database_table,
       $str,
       $now,
@@ -110,7 +108,7 @@ class CT_Sql {
  
     if ( $this->db->affected_rows() == 0
         && $this->db->query($squery)
-	&& $this->db->next_record() && $this->db->f(0) == 0
+	&& $this->db->next_record() && $this->db->f("count") == 0
         && !$this->db->query($iquery)) {
 
         $ret = false;

@@ -5,16 +5,16 @@
  * Copyright (c) 1998-2000 NetUSE AG
  *                    Boris Erdmann, Kristian Koehntopp
  *
- * $Id: sqlquery.inc,v 1.2 2003/07/04 07:10:50 intersol Exp $
+ * $Id: sqlquery.inc,v 1.2 2000/07/12 18:22:35 kk Exp $
  *
- */ 
+ */
 
 class Sql_Query {
   var $classname = "Sql_Query";  ## Persistence Support
   var $persistent_slots = array(
     "conditions", "input_size", "input_max", "method", "lang", "translate", "container", "variable"
   );
-  
+
   var $conditions = 1;      ## Allow for that many Query Conditions
   var $input_size = 20;     ## Used in text input field creation
   var $input_max  = 80;
@@ -25,18 +25,29 @@ class Sql_Query {
   var $translate = "on";    ## If set, translate column names
   var $container = "on";    ## If set, create a container table
   var $variable  = "on";    ## if set, create variable size buttons
-  
+
   ## HTML Widget dictionary
   var $dict = array(
-    _("en") => array(
-      "searchfor" => _("Search for:"),
-      "and"       => _("and"),
-      "or"        => _("or"),
-      "like"      => _("contains"),
-      "reset"     => _("Reset Query"),
-      "submit"    => _("Submit Query"),
-      "less"      => _("Fewer"),
-      "more"      => _("More")
+    "de" => array(
+      "searchfor" => "Suchen nach:",
+      "and"       => "und",
+      "or"        => "oder",
+      "like"      => "enthält",
+      "reset"     => "Neu",
+      "submit"    => "Ausführen",
+      "less"      => "Weniger",
+      "more"      => "Mehr"
+    ),
+
+    "en" => array(
+      "searchfor" => "Search for:",
+      "and"       => "and",
+      "or"        => "or",
+      "like"      => "contains",
+      "reset"     => "Reset Query",
+      "submit"    => "Submit Query",
+      "less"      => "Fewer",
+      "more"      => "More"
     )
   );
 
@@ -60,7 +71,7 @@ class Sql_Query {
   ##
   ## Create a <select> tag of the class $class with the name $name.
   ## The tag contains the options named in array $option. If $trans
-  ## is true, $option is exspected to be a hash of 
+  ## is true, $option is exspected to be a hash of
   ## "long name " => "sqlname" pairs. The option matching $old
   ## is created with the attribute "selected".
   ##
@@ -77,7 +88,7 @@ class Sql_Query {
       } else {
         $selected = "";
       }
-      
+
       $res .= sprintf("<option value=\"%s\"%s%s>%s\n",
                 ($trans)?$k:$v,
                 ($class)?" class=$class":"",
@@ -85,7 +96,7 @@ class Sql_Query {
                 $v);
     }
     $res .= sprintf("      </select>");
-    
+
     return $res;
   }
 
@@ -114,13 +125,13 @@ class Sql_Query {
 	## load the HTML results of this function into $res.
 	##
     $res  = "";
-    
+
     ## A hack. We cannot do language dependent initialisation of
     ## static values.
     if (isset($this->compare["like"])) {
       $this->compare["like"] = $this->dict[$this->lang]["like"];
     }
-    
+
     ## Prepare a self-directed container form
     if ($this->container) {
       $res .= sprintf("<table border=1%s><tr%s><td>\n",
@@ -129,49 +140,49 @@ class Sql_Query {
         ($class)?" class=$class":"");
     }
     $res .= sprintf("<form method=\"%s\" action=\"%s\">\n",
-      $this->method, 
+      $this->method,
       ($target)?$target:$sess->self_url());
-    
+
     ## Prepare the inner table, laying out the selection elements
     $res .= sprintf("<table%s>\n", ($class)?" class=$class":"");
 
-    ## Build $this->conditions many selection elements    
+    ## Build $this->conditions many selection elements
     for ($i=1; $i<= $this->conditions; $i++) {
       $res .= sprintf(" <tr%s>\n",   ($class)?" class=$class":"");
 
       ## Build conjunction (first row does not have a conjunction)
       if ($i == 1) {
-        $res .= sprintf("  <td%s>%s</td>\n", 
-          ($class)?" class=$class":"", 
+        $res .= sprintf("  <td%s>%s</td>\n",
+          ($class)?" class=$class":"",
           $this->dict[$this->lang]["searchfor"]);
       } else {
-        $res .= sprintf("  <td%s>%s</td>\n", 
-          ($class)?" class=$class":"", 
+        $res .= sprintf("  <td%s>%s</td>\n",
+          ($class)?" class=$class":"",
           $this->selection($this->makename($base, "conj", $i),
                            array("and" => $this->dict[$this->lang]["and"], "or" => $this->dict[$this->lang]["or"]),
-                           $GLOBALS[$base]["conj_".$i], 
+                           $GLOBALS[$base]["conj_".$i],
                            "on",
                            $class));
       }
-      
+
       ## Build field selection
       $res .= sprintf("  <td%s>%s</td>\n",
         ($class)?" class=$class":"",
         $this->selection(
-          $this->makename($base, "sel", $i), 
-          $option, 
-          $GLOBALS[$base]["sel_".$i], 
-          $this->translate, 
+          $this->makename($base, "sel", $i),
+          $option,
+          $GLOBALS[$base]["sel_".$i],
+          $this->translate,
           $class));
-        
+
       ## Build comparison selection
       $res .= sprintf("  <td%s>%s</td>\n",
         ($class)?" class=$class":"",
         $this->selection(
-          $this->makename($base, "comp", $i), 
-          $this->compare, 
-          $GLOBALS[$base]["comp_".$i], 
-          "on", 
+          $this->makename($base, "comp", $i),
+          $this->compare,
+          $GLOBALS[$base]["comp_".$i],
+          "on",
           $class));
       ## Create text input field.
       $res .= sprintf("  <td%s><input type=\"text\" name=\"%s\" value=\"%s\" size=%d maxlength=%d%s></td>\n",
@@ -188,7 +199,7 @@ class Sql_Query {
     ## Create variable size buttons
     $res .= sprintf(" <tr%s>\n",  ($class)?" class=$class":"");
     $res .= sprintf("  <td%s>&nbsp;</td>\n", ($class)?" class=$class":"");
-    
+
     if ($this->variable) {
       $res .= sprintf("  <td%s><input type=\"submit\" name=\"%s\" value=\"%s\">&nbsp;",
         ($class)?" class=$class":"",
@@ -200,7 +211,7 @@ class Sql_Query {
     } else {
       $res .= sprintf("  <td%s>&nbsp;</td>\n", ($class)?" class=$class":"");
     }
-    
+
     $res .= sprintf("  <td%s>&nbsp;</td>\n", ($class)?" class=$class":"");
     $res .= sprintf("  <td%s><input type=\"reset\" value=\"%s\">&nbsp;",
       ($class)?" class=$class":"",
@@ -208,10 +219,10 @@ class Sql_Query {
     $res .= sprintf("<input type=\"submit\" name=\"%s\"value=\"%s\"></td>\n",
       $this->makename($base, "submit", 0),
       $this->dict[$this->lang]["submit"]);
-    
+
     $res .= sprintf(" </tr>\n");
     $res .= sprintf("</table>\n");
-    
+
     $res .= sprintf("</form>\n");
     if ($this->container) {
       $res .= sprintf("</td></tr></table>\n");
@@ -220,7 +231,7 @@ class Sql_Query {
 
     return $res;
   }
-  
+
   ## plain_where:
   ##
   ## Given a base variable name, creates a condition suitable for
@@ -235,7 +246,7 @@ class Sql_Query {
       ## If necessary, add conjunction
       if ($q != "")
         $q .= sprintf(" %s ", $GLOBALS[$base]["conj_".$i]);
-      
+
       ## Handle "like"
       if ($GLOBALS[$base]["comp_".$i] == "like")
         $v = "%".$GLOBALS[$base]["input_".$i]."%";
@@ -248,11 +259,11 @@ class Sql_Query {
               $GLOBALS[$base]["comp_".$i],
               $v);
     }
-    
+
     if (!$q) {
       $q = "1=0";
     }
-    
+
     return "( $q )";
   }
 
@@ -270,7 +281,7 @@ class Sql_Query {
       ## If necessary, add conjunction
       if ($q != "")
         $q .= sprintf(" %s ", $this->dict[$this->lang][$GLOBALS[$base]["conj_".$i]]);
-      
+
       ## Handle "like"
       if ($GLOBALS[$base]["comp_".$i] == "like")
         $c = $this->dict[$this->lang][$GLOBALS[$base]["comp_".$i]];
@@ -283,14 +294,14 @@ class Sql_Query {
               $c,
               $GLOBALS[$base]["input_".$i]);
     }
-    
+
     if (!$q) {
       $q = "1=0";
     }
-    
+
     return "( $q )";
   }
-  
+
   ## where:
   ##
   ## Same as plain_where(), but also inspects the submit button
@@ -298,13 +309,13 @@ class Sql_Query {
   function where($base, $incr = 1) {
     if (isset($GLOBALS[$base]["less_0"]))
       $this->conditions -= $incr;
-    
+
     if (isset($GLOBALS[$base]["more_0"]))
       $this->conditions += $incr;
-    
+
     if ($this->conditions < 1)
       $this->conditions = 1;
-    
+
     return $this->plain_where($base);
   }
 }

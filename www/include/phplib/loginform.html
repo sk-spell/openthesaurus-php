@@ -69,13 +69,12 @@ while( list($key, $val) = each($_POST) ) {
 
 <!-- failed login code: -->
 <?php
-if ( isset($_POST['username']) ) { ?>
-
+if (!empty($_POST['username']) ) { ?>
 	<br />
 	<table>
 		<tr>
 			<td colspan="2">
-				<?php if( ! array_key_exists('Thesaurus_Session', $_COOKIE) ) { ?>
+				<?php if( !array_key_exists('Thesaurus_Session', $_COOKIE) ) { ?>
 					<?php print _("<p class=\"error\">Couldn't log in, please activate cookies.</p>") ?>
 				<?php } else { ?>
 					<?php print _("<p class=\"error\">Invalid username or password.<br />Please note: Login requires cookies.</p>") ?>
@@ -102,5 +101,6 @@ if (document.forms['loginform'][0].value != '') {
 </script>
 
 <?php
+#include $_SERVER['DOCUMENT_ROOT'].BASE_URL."/include/bottom.php";
 include("./include/bottom.php");
 ?>

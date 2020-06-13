@@ -11,6 +11,9 @@ $word = $_GET['word'];
 <!--	<li>Deutsch/Englisch-W&ouml;rterb&uuml;cher:
 		<a href="<?php print sprintf("http://dict.tu-chemnitz.de/dings.cgi?lang=de&amp;".
 			"noframes=1&amp;service=&amp;query=%s&amp;optword=1&amp;optcase=1&amp;opterrors=0&amp;optpro=0&amp;style=&amp;dlink=self",
-			urlencode(iconv("utf8", "latin1//TRANSLIT", $word))); ?>">dict.tu-chemnitz.de</a> |
+			urlencode(iconv("utf8", "latin1//TRANSLIT", $word))); ?>">dict.tu-chemnitz.de</a>
 		<a href="<?php print sprintf("http://www.dict.cc/?s=%s", urlencode($word)); ?>">dict.cc</a></li>
+	<li><a href="<?php print sprintf("http://www.canoo.net/services/Controller?input=%s&amp;service=inflection",
+		urlencode(iconv("utf8", "latin1//TRANSLIT", $word))); ?>">Flexion auf Canoo.net</a></li>
+-->
 </ul>

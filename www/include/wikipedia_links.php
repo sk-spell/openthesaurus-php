@@ -13,7 +13,7 @@ if( $queryterm != "" ) {
 	$db->query($query);
 	?>
 	<p class="compact"><strong>
-		Wikipedia-Links (<a href="faq.php#wikilinks">?</a>)</strong>:</p>
+		<a href="http://sk.wikipedia.org"><?php print _("Wikipedia") ?></a>-Links (<a href="faq.php#wikilinks">?</a>)</strong>:</p>
 	<ul class="compact"><li>
 	<?php
 	$wikilinks = array();
@@ -41,14 +41,14 @@ if( $queryterm != "" ) {
 	<li class="wiktionarylicense">Quelle:
 		<a class="wikilicenselink" href="http://de.wikipedia.org">Wikipedia</a>-Seite zu 
 		'<a class="wikilicenselink"
-		href="http://de.wikipedia.org/wiki/<?php 
+		href="http:/sk.wikipedia.org/wiki/<?php
 			$wikilink = escape($realTitle);
 			$wikilink = preg_replace("/ /", "_", $wikilink);
 			print urlencode($wikilink);
 			?>"><?php print escape($realTitle) ?></a>',
 		Lizenz: <a href="wiktionary/fdl.txt" class="wikilicenselink">GNU-Lizenz
 		f&uuml;r freie Dokumentation</a>,
-		<a href="http://de.wikipedia.org/w/index.php?title=<?php
+		<a href="http://sk.wikipedia.org/w/index.php?title=<?php
 			print urlencode($wikilink);
 			?>&amp;action=history"
 			class="wikilicenselink">Versionen/Autoren</a></li>

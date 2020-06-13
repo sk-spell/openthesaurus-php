@@ -111,8 +111,15 @@ if( WEB_LANG == 'de_DE' ) {
 		<?php if( isset($auth) && $auth->auth["uid"] != "nobody" ) { ?>
 			<br /> &nbsp;
 		<?php } ?>
+		|
+		<a href="http://sk-spell.sk.cx">sk-spell.sk.cx</a>
+		                &nbsp;
+
 		</form>
 	</td>
+	<!-- sk-spell -->
+
+
 	<td align="right">
 	<?php
 

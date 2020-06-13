@@ -66,11 +66,11 @@ while( $db->next_record() ) {
 	$msg = "";
 	$msg = getChangeEntry($db->f('type'), $db->f('word'),
 			$db->f('synset_id'), $db->f('synset'), $comment, HOMEPAGE, 1);
-	$link = ereg_replace("^.*href=\"", "", $msg);
-	$link = ereg_replace("\".*$", "", $link);
-	$msg = ereg_replace("class=\"removed\"","style=\"font-weight: bold; text-decoration: line-through; color: red;\"",
+	$link = preg_replace("/^.*href=\"/", "", $msg);
+	$link = preg_replace("/\".*$/", "", $link);
+	$msg = preg_replace("/class=\"removed\"/","style=\"font-weight: bold; text-decoration: line-through; color: red;\"",
 		$msg);
-	$msg = ereg_replace("class=\"added\"","style=\"font-weight: bold; color: green;\"",
+	$msg = preg_replace("/class=\"added\"/","style=\"font-weight: bold; color: green;\"",
 		$msg);
 	$item = new FeedItem(); 
 

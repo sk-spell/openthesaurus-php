@@ -676,7 +676,7 @@
 			$s = $synset;
 			$del = sprintf("<span class=\"removed\">%s</span>", $word);
 			$s_org = $s;
-			$parts = split(", ", $s);
+			$parts =  preg_split("/, /", $s);
 			$i = 0;
 			foreach( $parts as $part ) {
 				if( trim($part) == $word ) {
@@ -826,7 +826,7 @@
 	}
 
 	function emailOkay($email) {
-		if( eregi("^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,4})$", $email)) { 
+		if( preg_match("/^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,4})$/i", $email)) { 
 			return 1;
 		} else {
 			return 0;

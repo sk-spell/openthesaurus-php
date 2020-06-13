@@ -8,7 +8,7 @@
  *     The idea is of this class is based in November 1997,
  *     it was a collection of functions for PHP/FI and mSQL.
  *
- * $Id: query_sql.inc,v 1.1 2003/04/15 22:31:02 daniel Exp $
+ * $Id: query_sql.inc,v 1.1.1.1 2000/04/17 16:40:12 kk Exp $
  *
  */
 
@@ -168,7 +168,7 @@ class Query extends DB_Sql {
 	## This is the char, which will be replaced by \char.
 	## PHP3 seems to be NOT binary-safe, so not quoting
 	## for \0  (some ideas?)
-	## we use ereg_replace to do the replacements.
+	## we use preg_replace to do the replacements.
 	## with PHP3.0.6 you should replace this with str_replace()!
 	##   Quoting = 1 -> normal quoting using AddSlashes
 	##             2 -> Replace \' to '' - needed eg. for sybase or oracle
@@ -437,7 +437,7 @@ class Query extends DB_Sql {
 		}
 		$q=sprintf("UPDATE %s SET %s",$table,join($s,","));
 		if ($where) {
-			if (!eregi("^[[:space:]]*WHERE",$where)) {
+			if (!preg_match("/^[[:space:]]*WHERE/i", $where)) {
 				## insert "WHERE" if not set
 				$where="WHERE $where";
 			}
@@ -476,7 +476,7 @@ class Query extends DB_Sql {
 		if (Count($s)) {
 			$q=sprintf("UPDATE %s SET %s",$table,join($s,","));
 			if ($where) {
-				if (!eregi("^[[:space:]]*WHERE",$where)) {
+				if (!preg_match("/^[[:space:]]*WHERE/i", $where)) {
 					## insert "WHERE" if not set
 					$where="WHERE $where";
 				}
@@ -503,7 +503,7 @@ class Query extends DB_Sql {
 
 		$q=sprintf("DELETE FROM %s",$table);
 		if ($where) {
-			if (!eregi("^[[:space:]]*WHERE",$where)) {
+			if (!preg_match("/^[[:space:]]*WHERE/i", $where)) {
 				## insert "WHERE" if not set
 				$where="WHERE $where";
 			}
@@ -579,13 +579,13 @@ class Query extends DB_Sql {
 			$q.=" $andor ".$mywhere[$i];
 		}
 		if ($where) {
-			$where=eregi_Replace("^[[:space:]]*WHERE","",$where);
+			$where = preg_replace("/^[[:space:]]*WHERE/i", "", $where);
 			$q.=" $andor $where";
 		}
 		if (!$q && $ckeck=='full') {
 			echo "WARNING: where_plain_Clause(): WHERE-clause is empty!<BR>";
 		}
-		$q=ereg_Replace("^ $andor "," WHERE ",$q);
+		$q = preg_replace("/^ $andor /", " WHERE ", $q);
 		$this->_QDebug("where_plain_Clause(): $q");
 		return($q);
 	}
@@ -638,13 +638,13 @@ class Query extends DB_Sql {
 			$q.=" $andor $k[name] $o $k[val]";
 		}
 		if ($where) {
-			$where=eregi_Replace("^[[:space:]]*WHERE","",$where);
+			$where = preg_replace("/^[[:space:]]*WHERE/", "", $where);
 			$q.=" $andor $where";
 		}
 		if (!$q && $ckeck=='full') {
 			echo "WARNING: where_Clause(): WHERE-clause is empty!<BR>";
 		}
-		$q=ereg_Replace("^ $andor "," WHERE ",$q);
+		$q = preg_replace("/^ $andor /", " WHERE ", $q);
 		$this->_QDebug("where_Clause(): $q");
 		return($q);
 	}

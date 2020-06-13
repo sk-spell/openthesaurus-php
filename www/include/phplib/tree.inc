@@ -73,8 +73,8 @@ class Tree {
 			$evalnext="list(\$k) = each($eval);";
 			eval($evalnext);			## First element
 			$i=1;
-			while ($k || "0"==$k) {
-				$eval2= $eval . "[\"". ereg_Replace("\"","\\\"",$k) ."\"]";
+			while (strlen($k)) {
+				$eval2= $eval . "[\"". preg_replace("/\"/", "\\\"", $k) ."\"]";
 				eval("\$t=gettype($eval2); \$v=$eval2;");
 #DEB			echo "<BR>$i: $t - $k -> '$v' - $c<BR>";
 				if ("0" != $k) {
@@ -112,7 +112,7 @@ class Tree {
 
 
 	function path_to_index (&$path,$key="") {
-		$key=ereg_Replace("\"","\\\"",$key);
+		$key = preg_replace("/\"/", "\\\"", $key);
 		if ($path && $key) {
 			$path.=$this->delimiter . $key;
 		} else {
@@ -151,7 +151,7 @@ class Tree {
    ##
 
 	function path_add ($path,$key) {
-		$key=ereg_Replace("\"","\\\"",$key);
+		$key = preg_replace("/\"/", "\\\"", $key);
 		if ($path && $key) {
 			$path.=$this->delimiter . $key;
 		} else {

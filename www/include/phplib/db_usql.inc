@@ -6,7 +6,7 @@
  *
  * (c) 1999-2000 Carmelo Guarneri
  *
- * $Id: db_usql.inc,v 1.1 2003/04/15 22:31:02 daniel Exp $
+ * $Id: db_usql.inc,v 1.2 2000/07/12 18:22:34 kk Exp $
  *
  */ 
 
@@ -20,7 +20,7 @@ class DB_USql extends DB_Sql {
 //--------------------------------------------------------------
   function import_record_vars() {
     while (list($key, $val) = each($this->Record))
-    if (ereg("[A-Za-z][A-Za-z0-9_]*", $key)) {
+    if (preg_match("/[A-Za-z][A-Za-z0-9_]*/", $key)) {
       $field_name = strtoupper($key); 
 	  global $$field_name;
 	  $$field_name=$val;
@@ -55,13 +55,13 @@ class DB_USql extends DB_Sql {
     $fields="";
 	$values="";
     while (list($key, $val) = each($this->Record))
-    if (ereg("[A-Za-z][A-Za-z0-9_]*", $key)) {
+    if (preg_match("/[A-Za-z][A-Za-z0-9_]*/", $key)) {
       $field_name = strtoupper($key);
 	  if (!empty($val)) 
 	  if (strstr( $filter, $field_name )=="") {
 	    $fields.="$field_name ,";
-		$val=ereg_replace("'","''",$val);
-		$val=ereg_replace("\"","\\\"",$val);
+		$val=preg_replace("/'/","''",$val);
+		$val=preg_replace("/\"/","\\\"",$val);
 		//addslashes($val);
 	    $values.="'$val' ,";
 	  };

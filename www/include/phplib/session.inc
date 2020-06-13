@@ -108,7 +108,7 @@ class Session {
  
     ## Strip risky chars from $id.
     if ( "" != $id ) {
-      $id = ereg_replace("[^a-zA-Z0-9]", "", $id);
+      $id = preg_replace("%[^a-zA-Z0-9]%", "", $id);
     }
     
     ### do not accept user provided ids for creation
@@ -188,7 +188,7 @@ class Session {
   ## session $id.
    
   function url($url){
-    $url=ereg_replace("[&?]+$", "", $url);
+    $url=preg_replace("%[&?]+$%", "", $url);
  
     switch ($this->mode) {
       case "get":
@@ -272,7 +272,7 @@ class Session {
         $str .= "\$$prefix = array(); ";
         while ( "array" == $l ) {
           ## Structural recursion
-          $this->serialize($prefix."['".ereg_replace("([\\'])", "\\\\1", $k)."']", $str);
+          $this->serialize($prefix."['".preg_replace("%([\\'])%", "\\\\1", $k)."']", $str);
           eval("\$l = gettype(list(\$k)=each(\$$prefix));");
         }
 
@@ -291,7 +291,7 @@ class Session {
       default:
         ## $$prefix is an atom. Extract it to $l, then generate code.
         eval("\$l = \$$prefix;");
-        $str.="\$$prefix = '".ereg_replace("([\\'])", "\\\\1", $l)."'; ";
+        $str.="\$$prefix = '".preg_replace("%([\\'])%", "\\\\1", $l)."'; ";
 
 
       break;

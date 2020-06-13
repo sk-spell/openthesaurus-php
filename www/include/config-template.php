@@ -100,7 +100,6 @@ define('TARGET_KWORD', "kword_thesaurus.txt");
 define('TARGET_TEXT', "thesaurus.txt");
 define('TARGET_OOO', "OOo-Thesaurus-snapshot.zip");
 define('TARGET_OOO2', "thes_de_DE_v2.zip");
-define('TARGET_OOO3', "Deutscher-Thesaurus.oxt");
 
 define('HIDDEN_SYNSETS', "-1");
 

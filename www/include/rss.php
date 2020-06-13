@@ -4,15 +4,15 @@ if( isset($db) ) {
 } else {
 	# called from cronjob
 	include("phplib/prepend.php3");
-	include("tool.php");	
+	include("tool.php");
 	$db = new DB_Thesaurus;
 }
 
-include("feedcreator.class.php"); 
+include("feedcreator.class.php");
 
-$rss = new UniversalFeedCreator(); 
-$rss->useCached(); 
-$rss->title = _("Recent changes in the thesaurus"); 
+$rss = new UniversalFeedCreator();
+$rss->useCached();
+$rss->title = _("Recent changes in the thesaurus");
 $rss->description = _("Recent changes in the thesaurus");
 
 //optional
@@ -21,27 +21,27 @@ $rss->description = _("Recent changes in the thesaurus");
 //$rss->xslStyleSheet = "http://feedster.com/rss20.xsl";
 
 $rss->cssStyleSheet 	= NULL;
-$rss->link = HOMEPAGE."changes.php"; 
-$rss->feedURL = HOMEPAGE."feed.xml"; 
+$rss->link = HOMEPAGE."changes.php";
+$rss->feedURL = HOMEPAGE."feed.xml";
 
-$image = new FeedImage(); 
-$image->title = "OpenThesaurus"; 
-$image->url = HOMEPAGE."favicon.png"; 
-$image->link = HOMEPAGE; 
+$image = new FeedImage();
+$image->title = "OpenThesaurus";
+$image->url = HOMEPAGE."favicon.png";
+$image->link = HOMEPAGE;
 $image->description = _("Recent changes in the thesaurus");
 
 //optional
 //$image->descriptionTruncSize = 500;
 //$image->descriptionHtmlSyndicated = true;
 
-$rss->image = $image; 
+$rss->image = $image;
 
 $actions_limit = 200;
 $query = sprintf("SELECT id, user_actions_log.user_id, visiblename, date,
 		word, synset, synset_id, type, comment
 	FROM user_actions_log, auth_user
 	WHERE
-		auth_user.user_id = user_actions_log.user_id			
+		auth_user.user_id = user_actions_log.user_id
    	ORDER BY date DESC
 	LIMIT %d", $actions_limit);
 
@@ -72,27 +72,27 @@ while( $db->next_record() ) {
 		$msg);
 	$msg = preg_replace("/class=\"added\"/","style=\"font-weight: bold; color: green;\"",
 		$msg);
-	$item = new FeedItem(); 
+	$item = new FeedItem();
 
 	# use this line to add the username:
-	$item->title = $date." ".$username." ".$msg; 
+	$item->title = $date." ".$username." ".$msg;
 
-	$item->link = $link; 
+	$item->link = $link;
 	# use this line to add the username:
-	$item->description = $date." ".$username." ".$msg; 
-	
+	$item->description = $date." ".$username." ".$msg;
+
 	//optional
 	//$item->descriptionTruncSize = 500;
 	$item->descriptionHtmlSyndicated = true;
-	
-	$item->date = time(); 
-	$item->source = HOMEPAGE; 
-	$item->author = $username; 
-	 
-	$rss->addItem($item); 
+
+	$item->date = time();
+	$item->source = HOMEPAGE;
+	$item->author = $username;
+
+	$rss->addItem($item);
 }
 
 // valid format strings are: RSS0.91, RSS1.0, RSS2.0, PIE0.1, MBOX, OPML, ATOM0.3, HTML, JS
-$rss->saveFeed("RSS0.91", "../www/feed.xml", false); 
+$rss->saveFeed("RSS0.91", "../feed.xml", false);
 
 ?>

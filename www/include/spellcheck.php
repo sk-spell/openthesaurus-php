@@ -1,4 +1,5 @@
-<p class="compact"><strong><?php print _("Spellcheck suggestions:") ?></strong> (Falsche Vorschl&auml;ge? <a href="faq.php#spellcheck">Siehe FAQ</a>)</p>
+<p class="compact"><strong><?php print _("Spellcheck suggestions:") ?></strong>
+(<?php print _("Wrong suggestions?") ?> <a href="faq.php#spellcheck"><?php print _("See FAQ") ?></a>)</p>
 
 <table cellspacing="0" cellpadding="0">
 <tr>
@@ -13,24 +14,24 @@ $misspelled_words = 0;
 foreach ($arr as $subArray) {
 	foreach ($subArray as $term) {
 		$misspelled_words++;
-		# this query looks strange, but it's faster than 
+		# this query looks strange, but it's faster than
 		# "words.word = '%s' OR words.lookup = '%s'":
 		# Currently commented out because we link all words, even those that
 		# are not in OpenThesaurus:
 		/*$query = sprintf("
 			SELECT meanings.id
 			FROM word_meanings, words, meanings
-			WHERE 
+			WHERE
 				words.id = word_meanings.word_id AND
 				word_meanings.meaning_id = meanings.id AND
 				meanings.hidden = 0 AND
 				words.word = '%s'
-						
-			UNION 
+
+			UNION
 
 			SELECT meanings.id
 			FROM word_meanings, words, meanings
-			WHERE 
+			WHERE
 				words.id = word_meanings.word_id AND
 				word_meanings.meaning_id = meanings.id AND
 				meanings.hidden = 0 AND
@@ -57,7 +58,7 @@ foreach ($arr as $subArray) {
 			<?php
 		}
 	}
-}  
+}
 if ($misspelled_words == 0) {
 	print _("<li>Word is spelled correctly</li>");
 }

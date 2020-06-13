@@ -16,7 +16,7 @@ function wiktionaryClean($s) {
 
 $match = 0;
 if( $queryterm != "" ) {
-	$query = sprintf("SELECT headword, meanings, synonyms FROM wiktionary WHERE headword = '%s'", 
+	$query = sprintf("SELECT headword, meanings, synonyms FROM wiktionary WHERE headword = '%s'",
 		myaddslashes($queryterm));
 		//myaddslashes(iconv("latin1", "utf8", $queryterm)));
 	$db->query($query);
@@ -45,21 +45,21 @@ if( $queryterm != "" ) {
 			$synonyms = _("(none)");
 		}
 		?>
-		<li><strong>Bedeutungen:</strong> <?php print $meanings ?></li>
-		<li><strong>Synonyme:</strong> <?php print $synonyms ?></li>
+		<li><strong><?php print _("Meanings:") ?></strong> <?php print $meanings ?></li>
+		<li><strong><?php print _("Synonyms:") ?></strong> <?php print $synonyms ?></li>
 		<?php
-	} else { 
+	} else {
 		print "<li>"._("No matches")."</li>";
 	}
 }
 ?>
 
 <?php if ($match) { ?>
-	<li class="wiktionarylicense">Quelle: <a class="wikilicenselink" href="http://de.wiktionary.org">Wiktionary</a>-Eintrag 
-	zu '<a href="<?php print $wikilink ?>" class="wikilicenselink"><?php print $wikiword ?></a>' 
-	aus , Lizenz: <a href="wiktionary/fdl.txt" 
-	class="wikilicenselink">GNU-Lizenz f&uuml;r freie Dokumentation</a>,
-	<a href="<?php print $wikilink_history ?>" class="wikilicenselink">Versionen/Autoren</a>
+	<li class="wiktionarylicense"><?php print _("Source: ") ?>
+	<a href="<?php print $wikilink ?>" class="wikilicenselink"><?php print $wikiword ?></a>
+	<?php print _("Licence: ") ?><a href="wiktionary/fdl.txt"
+	class="wikilicenselink"><?php print _("The GNU Free Documentation License") ?></a>,
+	<a href="<?php print $wikilink_history ?>" class="wikilicenselink"><?php print _("Version/Authors") ?></a>
 <?php } ?>
 
 </ul>

@@ -6,8 +6,8 @@ $links = array();
 
 $matches = 0;
 if( $queryterm != "" ) {
-	$query = sprintf("SELECT link, title FROM wikipedia_links, wikipedia_pages 
-		WHERE wikipedia_pages.title = '%s' AND wikipedia_pages.page_id = wikipedia_links.page_id", 
+	$query = sprintf("SELECT link, title FROM wikipedia_links, wikipedia_pages
+		WHERE wikipedia_pages.title = '%s' AND wikipedia_pages.page_id = wikipedia_links.page_id",
 		myaddslashes($queryterm));
 	#print $query;
 	$db->query($query);
@@ -38,20 +38,18 @@ if( $queryterm != "" ) {
 		print _("No matches");
 	} else {
 	?>
-	<li class="wiktionarylicense">Quelle:
-		<a class="wikilicenselink" href="http://de.wikipedia.org">Wikipedia</a>-Seite zu 
-		'<a class="wikilicenselink"
+	<li class="wiktionarylicense"><?php print _("Source: ") ?><a class="wikilicenselink"
 		href="http:/sk.wikipedia.org/wiki/<?php
 			$wikilink = escape($realTitle);
 			$wikilink = preg_replace("/ /", "_", $wikilink);
 			print urlencode($wikilink);
-			?>"><?php print escape($realTitle) ?></a>',
-		Lizenz: <a href="wiktionary/fdl.txt" class="wikilicenselink">GNU-Lizenz
-		f&uuml;r freie Dokumentation</a>,
+		       ?>"><?php print _("Wikipedia site") ?>'
+		<?php print escape($realTitle) ?>'</a>,
+		<?php print _("Licence: ") ?><a href="wiktionary/fdl.txt" class="wikilicenselink"><?php print _("The GNU Free Documentation License") ?></a>,
 		<a href="http://sk.wikipedia.org/w/index.php?title=<?php
 			print urlencode($wikilink);
 			?>&amp;action=history"
-			class="wikilicenselink">Versionen/Autoren</a></li>
+			class="wikilicenselink"><?php print _("Version/Authors") ?></a></li>
 	<?php } ?>
 	</ul>
 	<?php

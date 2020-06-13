@@ -7,7 +7,11 @@
 	document.forms['searchform']['word'].focus();
 	// -->
 	</script>
-<?php } ?>
+<?php }
 
+if (isset($auth->auth['uname']) !=  'admin' ) {
+   include("analytics.php");
+}
+?>
 </body>
 </html>

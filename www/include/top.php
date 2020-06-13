@@ -15,6 +15,7 @@ if( WEB_LANG == 'de_DE' ) {
 }
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "DTD/xhtml1-transitional.dtd">
+
 <html>
 <head>
 	<?php
@@ -45,6 +46,7 @@ if( WEB_LANG == 'de_DE' ) {
 		?>
 		<meta name="robots" content="noindex,nofollow" />
 	<?php } ?>
+	<meta lang="<?php print WEB_LANG ?>" />
 	<meta http-equiv="content-type" content="text/html; charset=<?php print $htmlcharset ?>" />
 	<link href="<?php print BASE_URL ?>/themes/styles.css" rel="stylesheet" type="text/css" />
 	<link rel="shortcut icon" href="<?php print BASE_URL ?>/favicon.ico" />

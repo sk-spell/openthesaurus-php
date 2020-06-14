@@ -48,8 +48,14 @@ if( isset($_COOKIE['thes_lang'])) {
 	setlocale(LC_ALL, $langs[0]);
 }
 
-#You might need to comment this in to make utf-8 work:
-bind_textdomain_codeset('messages', "UTF-8");
-bindtextdomain('messages', './include/locale');
-textdomain('messages');
+if(defined('STDIN') ) {
+	# Workaround for cli error:
+	# Fatal error: Call to undefined function bind_textdomain_codeset()
+	echo("Running from CLI\n");
+} else {
+	# You might need to comment this in to make utf-8 work:
+	bind_textdomain_codeset('messages', "UTF-8");
+	bindtextdomain('messages', './include/locale');
+	textdomain('messages');
+}
 ?>

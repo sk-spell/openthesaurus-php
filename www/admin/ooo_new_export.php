@@ -3,19 +3,25 @@
 #
 # Export of a thesaurus in OpenOffice.org 2.x format
 #
-
+/*
 if( ! (getenv('REMOTE_ADDR') == getenv('SERVER_ADDR')) ) {
 	print "Access from your host is denied.";
 	return;
 }
+*/
 
 chdir(dirname(__FILE__));
+include("../include/phplib/prepend.php3");
+include("../include/tool.php");
+$title = "OpenThesaurus admin interface: Build OOo 2.0 thesaurus files";
+include("../include/top.php");
+
 #### Configuration ###
-$lang = "de_DE";
+$zip_command = ZIP_COMMAND;
 # This is the text attached to the generic terms:
 $generic_term = " (Oberbegriff)";
 #$sub_term = " (Unterbegriff)";		# leave empty to disable
-$sub_term = "";		# leave empty to disable
+$sub_term = "";
 $antonym_term = " (Antonym)";		# leave empty to disable
 
 # Don't list words in the top hierarchie as generic terms, as it's usually not very
@@ -24,16 +30,17 @@ $min_depth = 4;
 # FIXME -- not yet properly tested: ging -> gehen etc. (requires word_forms, word_mappings tables):
 $full_forms = 0;
 
-include("../include/phplib/prepend.php3");
+$lang = LANG_1."_".LANG_2;
 $db = new DB_Thesaurus;
 $db2 = new DB_Thesaurus;
-include("../include/tool.php");
 
-$swiss_spelling = 0;			# replace "ß" by "ss" (makes sense only for German)?
-if (sizeof($argv) == 2 && $argv[1] == "de_CH") {
+# replace "ß" by "ss" (makes sense only for German)?
+$swiss_spelling = 0;
+$argv_ = $_SERVER['argv'];
+if (sizeof($argv_) == 2 && $argv_[1] == "de_CH") {
 	$swiss_spelling = 1;
 	$lang = "de_CH";
-}	
+}
 $output_file = "../OOo2-Thesaurus/th_".$lang."_v2.dat";
 $index_file = "../OOo2-Thesaurus/th_".$lang."_v2.idx";
 $readme_template = "README_OOo2_template";
@@ -85,10 +92,14 @@ function swissSpelling($word) {
 	return $word;
 }
 
-$title = "OpenThesaurus admin interface: Build OOo 2.0 thesaurus files";
-include("../include/top.php");
-
 print strftime("%H:%M:%S")." -- Building data...<br />\n";
+
+$init_q= sprintf("SET CHARACTER SET utf8");
+$db->query($init_q);
+$init_q= sprintf("SET NAMES utf8");
+$db->query($init_q);
+setlocale(LC_CTYPE, "UTF8", "sk_SK.UTF-8");
+
 
 $query = sprintf("SELECT words.id AS word_id, word, lookup, meaning_id, super_id, word_meanings.id AS wmid
 	FROM words, word_meanings, meanings
@@ -106,7 +117,7 @@ if( ! $fh ) {
 	print "Error: Cannot open '$output_file' for writing.\n";
 	return;
 }
-$encoding = "ISO8859-1";
+$encoding = "UTF-8";
 fwrite($fh, "$encoding\n");
 
 $occurences = array();
@@ -251,7 +262,7 @@ $warnings_max_msg = 0;
 while($i < sizeof($lines)) {
 	$rec = $lines[$i];
 	$rl = strlen($rec) + 1;
-	$parts = split("\|", $rec);
+	$parts = explode("\|", $rec);
 	$entry = $parts[0];
 	if( ! isset($parts[1]) ) {
 		$i++;
@@ -331,14 +342,15 @@ fclose($readme_fh);
 
 print "Calling ZIP...<br>\n";
 print "<pre>";
-$target = "../download/thes_".$lang."_v2.zip";
-$tmp_target = "thes_".$lang."_v2.zip";
+$target = "../download/".TARGET_OOO2.".zip";
+$tmp_target = "../download/".TARGET_OOO2."-tmp.zip";
+#$tmp_target = "thes_".$lang."_v2.zip";
 if (!chdir("../OOo2-Thesaurus")) {
 	print "Error switching to ../OOo2-Thesaurus\n";
 	return;
 }
-$zip = "/usr/bin/zip $tmp_target th_".$lang."_v2.idx th_".$lang."_v2.dat README_th_".$lang."_v2.txt";
-print "$zip\n";
+$zip = "$zip_command $tmp_target th_".$lang."_v2.idx th_".$lang."_v2.dat README_th_".$lang."_v2.txt";
+print "$zip\n"; flush();
 
 if( ! system($zip) ) {
 	print "Error executing zip\n";
@@ -352,7 +364,7 @@ if( ! rename($tmp_target, $target) ) {
 print "</pre>";
 
 print "<p>";
-print strftime("%H:%M:%S")." -- ZIP saved as <a href=\"../$target\">OOo2-Thesaurus.zip</a></p>";
+print strftime("%H:%M:%S")." -- ZIP saved as <a href=\"../$target\">".TARGET_OOO2.".zip</a></p>";
 
 print "<hr>";
 

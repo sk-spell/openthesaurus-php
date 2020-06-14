@@ -167,7 +167,7 @@ $db->query($query);
 						?>
 					</span></td>
 					<td><?php
-						$link = "../".DEFAULT_SEARCH."?word=".urlencode($db->f('term'));
+						$link = DEFAULT_SEARCH."?word=".urlencode($db->f('term'));
 						if( $db->f('submatch') ) {
 							$link .= "&substring=on";
 						}

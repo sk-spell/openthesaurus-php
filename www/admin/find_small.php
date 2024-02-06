@@ -32,7 +32,7 @@ while( $db->next_record() ) {
 }
 
 $c = 0;
-while( list($id, $val) = each($ids) ) {
+foreach ($ids as $id => $val) {
 	$query = sprintf("SELECT id
 		FROM word_meanings
 		WHERE word_meanings.meaning_id = %d", $id);

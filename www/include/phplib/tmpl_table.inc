@@ -71,7 +71,7 @@ Class Template_Table extends Table {
     $d = $this->select_colnames($data);    
 
     reset($d);
-    while(list($key, $val) = each($d)) {
+    foreach ($d as $key => $val) {
 	  $lvar=$val;
 	  if ($uppercase) $lvar=strtoupper($val);
 	  $$lvar=$data[$val];

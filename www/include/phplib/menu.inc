@@ -104,7 +104,7 @@ class Menu {
 
     # Using PHP4, this could be faster, but we want to be portable.
     reset($this->item);
-    while(list($k, $v) = each($this->item)) {
+    foreach ($this->item as $k => $v) {
       $this->visible[] = $k;
     }
     sort($this->visible);
@@ -177,7 +177,7 @@ class Menu {
     # Determine menu levels up from current position
     $r = $this->split_path($this->map);
 
-    while(list($a, $b) = each($r)) {
+    foreach ($r as $a => $b) {
       if (isset($this->title) && $this->title != "") {
         $this->title .= $this->title_delim;
       }
@@ -228,7 +228,7 @@ class Menu {
 
     $r = explode("/", $p);
     reset($r);
-    while(list($k, $v) = each($r)) {
+    foreach ($r as $k => $v) {
       if ($v) {
         $path .= "/$v";
       }
@@ -250,7 +250,7 @@ class Menu {
       # if current level has children, add them...
       if (isset($this->children[$r[$i]])) {
         reset($this->children[$r[$i]]);
-        while(list($k, $v) = each($this->children[$r[$i]])) {
+        foreach ($this->children[$r[$i]] as $k => $v) {
           $this->visible[] = $v;
 
           # The "pseudo" feature has not been documented in previous
@@ -274,7 +274,7 @@ class Menu {
           if (isset($this->item[$v]["pseudo"]) && !preg_match("/^$v/", $this->map)) {
             if (isset($this->children[$v]) && is_array($this->children[$v]) ) {
               reset($this->children[$v]);
-              while (list($w, $ww) = each($this->children[$v])) {
+              foreach ($this->children[$v] as $w => $ww) {
                 $this->visible[] = $ww;
               }
             }
@@ -292,7 +292,7 @@ class Menu {
    */
   function setup() {
     reset($this->urlmap);
-    while(list($k, $v) = each($this->urlmap)) {
+    foreach ($this->urlmap as $k => $v) {
       $base = dirname($v);
       $base = str_replace("\\","/",$base);
       if ($base == "/") {

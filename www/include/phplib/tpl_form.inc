@@ -90,7 +90,7 @@ class tpl_form {
     if (! is_array($fv)) {
       return false;
     }
-    while (list($var, $value) = each($fv)) {
+    foreach ($fv as $var => $value) {
       global $$var;
       $$var = $value;
     }

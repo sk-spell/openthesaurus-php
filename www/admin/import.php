@@ -38,7 +38,7 @@ if( array_key_exists('text', $_POST) ) {
 	$words = preg_split("/[\s,:!;\.\"\?\/\-\(\)\\\]+/", $_POST['text']);
 	$words = array_unique($words);
 	$i = 0;
-	while( list($count, $word) = each($words) ) {
+	foreach ($words as $count => $word) {
 		#$org_word = $word;
 		$base_words = getBaseform($db, $word);
 		if( sizeof($base_words) > 0 ) {
@@ -73,7 +73,7 @@ if( array_key_exists('text', $_POST) ) {
 	print "<h2>Unknown word forms</h2>";
 
 	reset($words);
-	while( list($count, $word) = each($words) ) {
+	foreach ($words as $count => $word) {
 		$query = sprintf("SELECT word
 			FROM word_forms
 			WHERE word = '%s'", 

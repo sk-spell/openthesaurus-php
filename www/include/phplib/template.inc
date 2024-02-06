@@ -85,7 +85,7 @@ class Template {
       $this->file[$handle] = $this->filename($filename);
     } else {
       reset($handle);
-      while(list($h, $f) = each($handle)) {
+      foreach ($handle as $h => $f) {
         $this->file[$h] = $this->filename($f);
       }
     }
@@ -126,7 +126,7 @@ class Template {
         $this->varvals[$varname] = $value;
     } else {
       reset($varname);
-      while(list($k, $v) = each($varname)) {
+      foreach ($varname as $k => $v) {
         if (!empty($k))
           if ($this->debug) print "array: set *$k* to *$v*<br>\n";
           $this->varkeys[$k] = "/".$this->varname($k)."/";
@@ -174,7 +174,7 @@ class Template {
       }
     } else {
       reset($handle);
-      while(list($i, $h) = each($handle)) {
+      foreach ($handle as $i => $h) {
         $str = $this->subst($h);
         $this->set_var($target, $str);
       }
@@ -192,7 +192,7 @@ class Template {
    */
   function get_vars() {
     reset($this->varkeys);
-    while(list($k, $v) = each($this->varkeys)) {
+    foreach ($this->varkeys as $k => $v) {
       $result[$k] = $this->varvals[$k];
     }
     
@@ -210,7 +210,7 @@ class Template {
       return $this->varvals[$varname];
     } else {
       reset($varname);
-      while(list($k, $v) = each($varname)) {
+      foreach ($varname as $k => $v) {
         $result[$k] = $this->varvals[$k];
       }
       
@@ -233,7 +233,7 @@ class Template {
       return false;
 
     reset($m);
-    while(list($k, $v) = each($m)) {
+    foreach ($m as $k => $v) {
       if (!isset($this->varkeys[$v]))
         $result[$v] = $v;
     }

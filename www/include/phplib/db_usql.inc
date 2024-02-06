@@ -19,7 +19,7 @@ class DB_USql extends DB_Sql {
 //  It should be used after a call to next_record().
 //--------------------------------------------------------------
   function import_record_vars() {
-    while (list($key, $val) = each($this->Record))
+    foreach ($this->Record as $key => $val)
     if (preg_match("/[A-Za-z][A-Za-z0-9_]*/", $key)) {
       $field_name = strtoupper($key); 
 	  global $$field_name;
@@ -54,7 +54,7 @@ class DB_USql extends DB_Sql {
   function dump_record($tablename, $filter="") {
     $fields="";
 	$values="";
-    while (list($key, $val) = each($this->Record))
+    foreach ($this->Record as $key => $val)
     if (preg_match("/[A-Za-z][A-Za-z0-9_]*/", $key)) {
       $field_name = strtoupper($key);
 	  if (!empty($val)) 

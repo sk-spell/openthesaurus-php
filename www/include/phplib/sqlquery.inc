@@ -81,7 +81,7 @@ class Sql_Query {
               ($class)?" class=$class":"",
               $name);
     reset($option);
-    while(list($k, $v) = each($option)) {
+    foreach ($option as $k => $v) {
       if (($trans == "" && $old == $v)
        || ($trans != "" && $old == $k)) {
         $selected = " selected";

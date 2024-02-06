@@ -97,7 +97,7 @@
 			$trans_table['ae'] = 'ä';
 			$trans_table['oe'] = 'ö';
 		}
-		while( list($k, $v) = each($trans_table) ) {
+		foreach ($trans_table as $k => $v) {
 			$altern_spelling = str_replace($k, $v, trim($_GET['word']));
 			if( $altern_spelling == trim($_GET['word']) ) {
 				continue;

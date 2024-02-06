@@ -184,7 +184,7 @@ class DB_MySQL {
   function lock($table, $mode = "write") {
     $query = "lock tables ";
     if(is_array($table)) {
-      while(list($key,$value) = each($table)) {
+      foreach ($table as $key => $value) {
         // text keys are "read", "read local", "write", "low priority write"
         if(is_int($key)) $key = $mode;
         if(strpos($value, ",")) {

@@ -229,7 +229,7 @@ class Table
     if (isset($this->heading) && $this->heading)
     {
       reset($ary);
-      list($key, $val) = each($ary);
+      foreach ($ary as $key => $val)
       $this->table_heading_row($val, $class);
     }
 
@@ -331,7 +331,7 @@ class Table
     $row = 0;
       
     reset($ary);
-    while(list($key, $val) = each($ary))
+    foreach ($ary as $key => $val)
     {
       ## Process a single row
       $this->table_row($row++, $key, $val, $class);
@@ -563,7 +563,7 @@ class Table
       
     ## Create regular cells
     reset($d);
-    while(list($key, $val) = each($d)) 
+    foreach ($d as $key => $val)
     {
       $this->table_heading_cell($col++, $val, $class);
     }
@@ -599,7 +599,7 @@ class Table
       
     ## Create regular cells
     reset($d);
-    while(list($key, $val) = each($d)) 
+    foreach ($d as $key => $val)
     {
       $this->table_cell($row, $cell++, $val, $data[$val], $class);
     }
@@ -657,7 +657,7 @@ class Table
     if ($this->verify_array($this->map_cols))
     {
       reset($this->map_cols);
-      while(list($key, $name) = each($this->map_cols)) 
+      foreach ($this->map_cols as $key => $name)
       {
         if ($key == $val)
         {
@@ -799,7 +799,7 @@ class Table
   {
     if (is_array($ary))
     {
-      while(list($key, $val) = each($ary))
+      foreach ($ary as $key => $val)
       {
         echo "&nbsp;&nbsp;$key = $val<br>\n";
         if (is_array($val))
@@ -836,7 +836,7 @@ class Table
     if (!is_array($this->fields) && is_array($data)) 
     {
       reset($data);
-      while(list($key, $val) = each($data)) 
+      foreach ($data as $key => $val)
       {
         if (ereg($this->filter, $key))
           $this->fields[] = $key;

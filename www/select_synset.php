@@ -14,7 +14,7 @@ include("./include/top.php");
 <form action="do_save.php" method="post">
 
 <?php
-while( list($key, $val) = each($_GET) ) {
+foreach ($_GET as $key => $val) {
 	if( $key == 'super_new' ) {
 		continue;
 	}

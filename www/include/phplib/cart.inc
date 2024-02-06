@@ -27,7 +27,7 @@ class Cart {
       return array(false, 0);
 
     reset($this->item);
-    while(list($item, $attr) = each($this->item)) {
+    foreach ($this->item as $item => $attr) {
     
       if (isset($attr["art"]) 
        && ($attr["art"] == $art)) {
@@ -44,7 +44,7 @@ class Cart {
   function reset() {
 
     reset($this->item);
-    while(list($item, $attr) = each($this->item)) {
+    foreach ($this->item as $item => $attr) {
       unset($this->item[$item]);
     }
     $this->currentItem = 1;
@@ -155,7 +155,7 @@ class Cart {
 
     reset($this->item);
     $this->show_cart_open();
-    while(list($item, $attr) = each($this->item)) {
+    foreach ($this->item as $item => $attr) {
       $this->show_item($attr["art"], $attr["num"]);
     }
     $this->show_cart_close();

@@ -72,7 +72,7 @@ function page_close() {
 
 function sess_load($session) {
   reset($session);
-  while (list($k,$v) = each($session)) {
+  foreach ($session as $k => $v) {
     $GLOBALS[$k] = new $v;
     $GLOBALS[$k]->start();
   }
@@ -80,7 +80,7 @@ function sess_load($session) {
 
 function sess_save($session) {
   reset($session);
-  while (list(,$v) = each($session)) {
+  foreach ($session as $v) {
     $GLOBALS[$v]->freeze();
   }
 }

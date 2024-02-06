@@ -53,7 +53,7 @@ class Session {
   function register($things) {
     $things = explode(",",$things);
     reset($things);
-    while ( list(,$thing) = each($things) ) {
+    foreach ($things as $thing) {
       $thing=trim($thing);
       if ( $thing ) {
         $this->pt[$thing] = true;
@@ -70,7 +70,7 @@ class Session {
   function unregister($things) {
     $things = explode(",", $things);
     reset($things);
-    while (list(,$thing) = each($things)) {
+    foreach ($things as $thing) {
       $thing = trim($thing);
       if ($thing) {
         unset($this->pt[$thing]);
@@ -236,7 +236,7 @@ class Session {
     }
 
     $qstring = "";
-    while (list($k, $v) = each($qarray)) {
+    foreach ($qarray as $k => $v) {
       $qstring .= $sep_char . urlencode($k) . "=" . urlencode($v);
       $sep_char = "&";
     }
@@ -318,7 +318,7 @@ class Session {
     $this->serialize("this->pt",$str);
 
     reset($this->pt);
-    while ( list($thing) = each($this->pt) ) {
+    foreach ($this->pt as $thing) {
       $thing=trim($thing);
       if ( $thing ) {
         $this->serialize("GLOBALS['".$thing."']",$str);
@@ -373,7 +373,7 @@ class Session {
       return;
 
     reset($$arrayname);
-    while(list($key, $val) = each($$arrayname)) {
+    foreach ($$arrayname as $key => $val) {
       $GLOBALS[$key] = $val;
     }
   }

@@ -168,7 +168,7 @@ if( trim(uservar('delete_super')) ) {
 
 	# remember all form values:
 	$url = "select_synset.php?";
-	while( list($key, $val) = each($_POST) ) {
+	foreach ($_POST as $key => $val) {
 		$url .= urlencode($key)."=".urlencode($val)."&";
 	}
 	header("Location: $url");
@@ -176,7 +176,7 @@ if( trim(uservar('delete_super')) ) {
 }
 
 $del_list = array();
-while( list($key, $val) = each($_POST) ) {
+foreach ($_POST as $key => $val) {
 	$found = preg_match("/^word_([0-9]+)$/", $key, $matches);
 	if( $found && $val == 'delete' ) {
 		$id = intval($matches[1]);

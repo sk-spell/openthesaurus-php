@@ -39,10 +39,10 @@ include("./include/top.php");
 <?php print _("You have to log in to directly add your corrections to our data. Don't have an account yet? <a href=\"register.php\"><strong>Sign up here.</strong></a>"); ?>
 </p>
 <?php
-while( list($key, $val) = each($_POST) ) {
-	if( $key == 'username' || $key == 'password' || $key == 'submit' ) {
-		continue;
-	}
+foreach ($_POST as $key => $val) {
+    if ($key == 'username' || $key == 'password' || $key == 'submit') {
+        continue;
+    }
 	print "<input type=\"hidden\" name=\"".escape($key)."\" value=\"".escape($val)."\" />\n";
 }
 ?>

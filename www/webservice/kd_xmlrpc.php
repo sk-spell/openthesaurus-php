@@ -15,14 +15,14 @@ Note: this code requires version 4.1.0 or higher of PHP.
 function & XML_serialize(&$data, $level = 0, $prior_key = NULL){
 	#assumes a hash, keys are the variable names
 	$xml_serialized_string = "";
-	while(list($key, $value) = each($data)){
+	foreach ($data as $key => $value) {
 		$inline = false;
 		$numeric_array = false;
 		$attributes = "";
 		#echo "My current key is '$key', called with prior key '$prior_key'<br>";
 		if(!strstr($key, " attr")){ #if it's not an attribute
 			if(array_key_exists("$key attr", $data)){
-				while(list($attr_name, $attr_value) = each($data["$key attr"])){
+				foreach ($data["$key attr"] as $attr_name => $attr_value) {
 					#echo "Found attribute $attribute_name with value $attribute_value<br>";
 					$attr_value = &htmlspecialchars($attr_value, ENT_QUOTES);
 					$attributes .= " $attr_name=\"$attr_value\"";
@@ -196,7 +196,7 @@ function & XMLRPC_prepare($data, $type = NULL){
 			}else{
 				$returnvalue['struct']['member'] = array();
 				$temp = &$returnvalue['struct']['member'];
-				while(list($key, $value) = each($data)){
+				foreach ($data as $key => $value) {
 					if(substr($key, -5) != ' type'){ #if it's not a type specifier
 						$type = NULL;
 						if(array_key_exists("$key type", $data)){

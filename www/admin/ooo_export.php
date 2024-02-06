@@ -75,7 +75,7 @@ $words[$prev_word] = join(',', $l);
 
 $wordlist = array();
 $thes = array();
-while( list($key, $val) = each($words) ) {
+foreach ($words as $key => $val) {
 	$query = sprintf("SELECT DISTINCT word, word_id, word_meanings.id AS wmid
 		FROM word_meanings, words
 		WHERE 
@@ -111,7 +111,7 @@ if( ! $fh ) {
 	print "Error: Cannot open '$thesfile' for writing.\n";
 	return;
 }
-while( list($word, $synlist) = each($thes) ) {
+foreach ($thes as $word => $synlist) {
 	$l = array();
 	foreach( $synlist as $t ) {
 		$t = preg_replace("/,/", ";", $t);

@@ -5,7 +5,7 @@
  * Copyright (c) 1998-2000 NetUSE AG
  *                    Boris Erdmann, Kristian Koehntopp
  *
- * $Id: perm.inc,v 1.1 2003/04/15 22:31:02 daniel Exp $
+ * $Id: perm.inc,v 1.2 2000/07/12 18:22:35 kk Exp $
  *
  */ 
 
@@ -36,8 +36,8 @@ class Perm {
     if (! isset($auth->auth["perm"]) ) {
       $auth->auth["perm"] = "";
     }
-    $pageperm = split(",", $p);
-    $userperm = split(",", $auth->auth["perm"]);
+    $pageperm = explode(",", $p);
+    $userperm = explode(",", $auth->auth["perm"]);
     
     list ($ok0, $pagebits) = $this->permsum($pageperm);
     list ($ok1, $userbits) = $this->permsum($userperm);

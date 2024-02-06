@@ -682,14 +682,15 @@ class FeedCreator extends HtmlDescribable {
 			$filename = $this->_generateFilename();
 		}
 		$feedFile = fopen($filename, "w+");
-		if ($feedFile) {
+		if ($feedFile === false) {
+			$err = error_get_last();
+			echo "<br />$err<br /><b>Error creating feed file ($filename), please check write permissions.</b><br />";
+		} else {
 			fputs($feedFile,$this->createFeed());
 			fclose($feedFile);
 			if ($displayContents) {
 				$this->_redirect($filename);
 			}
-		} else {
-			echo "<br /><b>Error creating feed file, please check write permissions.</b><br />";
 		}
 	}
 	
@@ -1170,7 +1171,7 @@ class MBOXCreator extends FeedCreator {
 		$eol = "\r\n"; 
 		$escape = "="; 
 		$output = ""; 
-		while( list(, $line) = each($lines) ) { 
+		foreach ($lines as $line) {
 			//$line = rtrim($line); // remove trailing white space -> no =20\r\n necessary 
 			$linlen = strlen($line); 
 			$newline = ""; 

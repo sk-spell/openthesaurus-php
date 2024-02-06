@@ -769,9 +769,7 @@
     }
 
 	function myaddslashes($st) {
-		if (get_magic_quotes_gpc()) {
-			$st = stripslashes($st);
-		}
+		$st = stripslashes($st);
 		if (!is_numeric($st)) {
 			$st = html_escape($st);
 		}

@@ -91,11 +91,7 @@ class Thesaurus_Auth extends Auth {
   }
   
   function localmyaddslashes($st) { 
-	if( get_magic_quotes_gpc() == 1 ) {
-		return $st;
-	} else {
 		return addslashes($st); 
-	}
   }
   
 }

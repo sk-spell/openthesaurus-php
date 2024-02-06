@@ -1,3 +1,21 @@
+# generated files
 *.po
 *.mo
-config.php
+*.pdf
+*.zip
+*.gz
+*.dat
+*.idx
+*.xml
+*.txt
+*.oxt
+*.xcu
+*.bz2
+*.png
+
+# hide temp files
+TODO
+*.patch
+
+# do not share configutation!
+config.php*

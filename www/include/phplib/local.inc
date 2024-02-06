@@ -55,7 +55,7 @@ class Thesaurus_Auth extends Auth {
     global $sess;
     global $_PHPLIB;
 
-    include($_PHPLIB["libdir"] . "loginform.html");
+    include($_PHPLIB["libdir"] . "loginform.php");
   }
   
   function auth_validatelogin() {

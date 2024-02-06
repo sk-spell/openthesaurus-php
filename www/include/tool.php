@@ -721,7 +721,7 @@
 			$word = sprintf(_("Deleted antonym relation: <span class=\"removed\">%s</span>"), $comment);
 		} elseif( $type == CHANGE_SUBJECT ) {
 			$comments = preg_split("/-&gt;/", $comment);
-			if ($comments[1] == '') {
+			if ( ! isset($comments[1])) {
 				$comments[1] = _("(none)");
 			}
 			$synset_str = "";

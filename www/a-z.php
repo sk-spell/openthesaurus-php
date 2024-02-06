@@ -121,15 +121,15 @@ if ($subchar) {
 <tr>
 	<td colspan="5" align="center">
 		<?php if ($startpos-$limit >= 0) { ?>
-			<b><a href="?start=<?php print escape($start_chars) ?>&amp;startpos=<?php print $startpos-$limit ?>">&lt;&lt;&nbsp;zurück</a></b>
+			<b><a href="?start=<?php print escape($start_chars) ?>&amp;startpos=<?php print $startpos-$limit ?>"><?php print _("&lt;&lt;&nbsp;Back")?></a></b>
 		<?php } else { ?>
-			<b>&lt;&lt;&nbsp;zurück</b>
+			<b><?php print _("&lt;&lt;&nbsp;Back")?></b>
 		<?php } ?>
 		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 		<?php if ($show_next_link) { ?>
-			<b><a href="?start=<?php print escape($start_chars) ?>&amp;startpos=<?php print $startpos+$limit ?>">weiter&nbsp;&gt;&gt;</a></b>
+			<b><a href="?start=<?php print escape($start_chars) ?>&amp;startpos=<?php print $startpos+$limit ?>"><?php print _("Forward&nbsp;&gt;&gt;")?></a></b>
 		<?php } else { ?>
-			<b>weiter&nbsp;&gt;&gt;</b>
+			<b><?php print _("Forward&nbsp;&gt;&gt;")?></b>
 		<?php } ?>
 	</td>
 </tr>

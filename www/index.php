@@ -19,7 +19,7 @@ include("./include/top.php");
 <table border="0" cellpadding="2" cellspacing="5" width="100%">
 <tr>
 	<td align="center">
-	
+
 		<table border="0" cellpadding="2" cellspacing="5" width="80%">
 			<tr>
 				<td align="center">
@@ -47,44 +47,48 @@ include("./include/top.php");
 			<tr>
 				<td align="center">
 					<br />
-					<a href="background.php">About</a> -
-					<a href="faq.php">FAQ</a> -
-					<a href="faq.php#ooo">Download</a> -
-					<a href="statistics.php">Statistik</a> - 
-					<a href="top_users.php">Top-User</a>
+					<a href="background.php"><?php print _("About") ?></a> -
+					<a href="faq.php"><?php print _("FAQ") ?></a> -
+					<a href="api.php"><?php print _("API") ?></a> -
+					<a href="faq.php#ooo"><?php print _("Download") ?></a> -
+					<a href="statistics.php"><?php print _("Statistics") ?></a> -
+					<a href="top_users.php"><?php print _("Top-user") ?></a>
 					<br /><br />
 
-					<a href="a-z.php">A bis Z</a> - 
-					<!-- <a href="subjects.php">Themengebiete</a> -  --> 
-					<a href="check.php">Zufallseintr&auml;ge</a> - 
-					<a href="tree.php">Baumansicht</a> -
-					<a href="variation.php?lang=at">&Ouml;sterreichische W&ouml;rter</a> - 
-					<a href="variation.php?lang=ch">Schweizer W&ouml;rter</a>
-
+					<a href="a-z.php"><?php print _("From A to Z") ?></a> -
+					<!-- <a href="subjects.php"> <?php #print _("Subjects") ?></a> -  -->
+					<a href="check.php"><?php print _("Random Check") ?></a> -
+					<a href="news_archive.php"><?php print _("News Archive") ?> - </a>
+					<a href="licence.html"><?php print _("Licencia") ?></a>
 				</td>
 			</tr>
 			<tr>
 				<td align="center">
 					<br />
 					<?php include("news.php"); ?>
-					
-					<br /><br /><br />
-					<a title="Bookmark setzen bei Mister Wong"
-						href="http://www.mister-wong.de/index.php?action=addurl&amp;bm_url=http://www.openthesaurus.de&amp;bm_description=Synonym-W&ouml;rterbuch%20-%20OpenThesaurus&amp;bm_tags=synonyme%20w&ouml;rterbuch%20thesaurus"><img border="0" width="22" height="22" alt="Mister Wong" src="images/sb_misterwong.gif"/></a>
-					&nbsp;
-					<a title="Bookmark setzen bei delicious"
-						href="http://del.icio.us/post?url=http://www.openthesaurus.de&amp;title=Synonym-W&ouml;rterbuch%20-%20OpenThesaurus&amp;notes="><img border="0" width="22" height="22" alt="delicious" src="images/sb_delicious.gif"/></a>
-
 				</td>
 			</tr>
 		</table>
-		
+
 	</td>
 </tr>
 
-<tr><td>&nbsp;</td></tr>
-<tr><td>&nbsp;</td></tr>
-<tr><td>&nbsp;</td></tr>
+<tr>
+	<td align="center">
+		<table>
+		<tr>
+			<td style="text-align:left">
+<form action="https://www.paypal.com/cgi-bin/webscr" method="post">
+<input type="hidden" name="cmd" value="_s-xclick">
+<input type="hidden" name="encrypted" value="-----BEGIN PKCS7-----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-----END PKCS7-----">
+<input type="image" src="https://www.paypal.com/en_US/i/btn/btn_donate_SM.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+<img alt="" border="0" src="https://www.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1"> </form>
+			</td>
+		</tr>
+		</table>
+	</td>
+</tr>
+
 <tr>
 	<td align="center">
 		<table>
@@ -105,8 +109,8 @@ include("./include/top.php");
 // -->
 </script>
 
-<?php 
-include("./include/bottom.php"); 
+<?php
+include("./include/bottom.php");
 page_close();
 ?>
- 
+

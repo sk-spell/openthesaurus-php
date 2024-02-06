@@ -80,21 +80,11 @@ include("./include/top.php");
 	<td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
 	<td class="compact" width="65%" valign="top">
 		<?php if( uservar('word') && $queryterm != "" ) { ?>
-			<p class="compact"><strong>Aktionen:</strong></p>
+			<p class="compact"><strong><?php print _("Action:") ?></strong></p>
 			<ul class="compact">
 				<li><a href="add.php?word=<?php print urlencode($_GET['word'])?>"><?php print 
 				sprintf(_("Add '%s' and synonyms to OpenThesaurus"), escape($_GET['word'])) ?></a></li>
 			</ul>
-			
-			<br />
-			<ul class="compact">
-				<a title="Bookmark setzen bei Mister Wong"
-					href="http://www.mister-wong.de/index.php?action=addurl&amp;bm_url=http://www.openthesaurus.de/overview.php?word=<?php print urlencode($_GET['word']) ?>&amp;bm_description=Synonyme%20zu%20'<?php print urlencode($_GET['word']) ?>'%20-%20OpenThesaurus&amp;bm_tags=synonyme%20w&ouml;rterbuch%20thesaurus"><img border="0" width="22" height="22" src="images/sb_misterwong.gif" alt="Mister Wong"/></a>
-				&nbsp;
-				<a title="Bookmark setzen bei delicious"
-					href="http://del.icio.us/post?url=http://www.openthesaurus.de/overview.php?word=<?php print urlencode($_GET['word']) ?>&amp;title=Synonyme%20zu%20'<?php print urlencode($_GET['word']) ?>'%20-%20OpenThesaurus&amp;notes="><img border="0" width="22" height="22" src="images/sb_delicious.gif" alt="Delicious"/></a>
-			</ul>
-		
 		<?php } ?>
 	</td>
 </tr>

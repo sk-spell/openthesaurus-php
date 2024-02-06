@@ -15,7 +15,7 @@ include("./include/top.php");
 <div class="simplePage">
 
 <?php
-include("stats_output.html");
+include("stats.php");
 ?>
 
 </div>

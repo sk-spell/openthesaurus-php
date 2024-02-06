@@ -135,7 +135,7 @@ class Session {
       break;
       case "get":
         if ( isset($QUERY_STRING) ) {
-          $QUERY_STRING = ereg_replace(
+          $QUERY_STRING = preg_replace(
             "(^|&)".quotemeta(urlencode($this->name))."=(.)*(&|$)", ## subst *any* preexistent sess
             "\\1", $QUERY_STRING);
         }

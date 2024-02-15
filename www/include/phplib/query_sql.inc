@@ -23,7 +23,7 @@ Query is fully upward compatible with DB_Sql. Example:
 
 OLD:                                NEW:
 
-require("db_mysql.inc");            require("db_mysql.inc");
+require("db_mysqli.inc");           require("db_mysqli.inc");
 class hugobla extends DB_sql {}     require("query_sql.inc");
 $db = new hugobla;                  class hugobla extends Query {}
                                     $db = new hugobla;

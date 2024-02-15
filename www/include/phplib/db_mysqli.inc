@@ -116,8 +116,10 @@ class DB_Sql {
 
   /* public: discard the query result */
   function free() {
-      @mysqli_free_result($this->Query_ID);
-      $this->Query_ID = 0;
+    if($this->Query_ID instanceof MySQLi_Result) {
+        @mysqli_free_result($this->Query_ID);
+        $this->Query_ID = 0;
+    }
   }
 
   /* public: perform a query */

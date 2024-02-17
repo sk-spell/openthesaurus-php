@@ -19,3 +19,19 @@ TODO
 
 # do not share configutation!
 config.php*
+
+# local files
+www/download
+www/OOo2-Thesaurus/*SK*
+www/OOo2-Thesaurus/description.xml
+www/OOo2-Thesaurus/icon.png
+www/OOo-Thesaurus/*SK*
+www/*sk*
+www/org*
+www/art/icon.png
+www/admin/trimthes.txt
+www/admin/wordlist.txt
+www/admin/*sk*
+www/TODO
+www/feed.xml
+www/licence.html

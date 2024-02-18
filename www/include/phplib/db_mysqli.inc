@@ -49,7 +49,7 @@ class DB_Sql {
   }
   function escape_string($str) {
 	if (!$this->connect()) return 0; 
-	if (get_magic_quotes_gpc()) $str = stripslashes($str);
+	$str = stripslashes($str);
 	return mysqli_real_escape_string($this->Link_ID,$str);
   }
   function quote_identifier($str) {
@@ -66,7 +66,7 @@ class DB_Sql {
   }
 
   /* public: constructor */
-  function DB_Sql($query = "") {
+  function __construct($query = "") {
       $this->query($query);
   }
 

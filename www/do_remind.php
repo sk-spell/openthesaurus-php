@@ -10,7 +10,7 @@ if( ! emailOkay(uservar('email')) ) {
 }
 
 # need this so mysql_real_escape_string() in tool.php won't fail
-$link = mysql_connect(DB_HOST, DB_USER, DB_PASSWORD) OR die(mysql_error());
+$link = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD) OR die(mysqli_error());
 
 $query = sprintf("SELECT password FROM auth_user WHERE username = '%s'",
 	myaddslashes(uservar('email')));

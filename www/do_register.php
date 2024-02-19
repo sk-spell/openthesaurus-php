@@ -14,7 +14,7 @@ if( ! uservar('gpl') == "1" ) {
 }
 
 # need this so mysql_real_escape_string() in tool.php won't fail
-$link = mysql_connect(DB_HOST, DB_USER, DB_PASSWORD) OR die(mysql_error());
+$link = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD) OR die(mysqli_error());
 
 $query = sprintf("SELECT user_id FROM auth_user WHERE username = '%s'",
 	myaddslashes(uservar('email')));
@@ -26,8 +26,8 @@ if( $db->nf() == 1 ) {
 }
 
 $username = uservar('email');
-$pwd = generatePassword(5);
-	
+$pwd = generatePassword(8);
+
 $to = uservar('email');
 $from = "dontreply@" . DOMAIN;
 $subject = _("Registered on ") . DOMAIN;
@@ -68,7 +68,7 @@ function generatePassword($length) {
 	// generate a random password:
 	list($usec, $sec) = explode(' ', microtime());
 	mt_srand((float) $sec + ((float) $usec * 100000));
-	$possible_characters = "abcdefghijklmnopqrstuvwxyz1234567890ABCDEFGHIJKLMNOPQRSTUVWXYZ"; 
+	$possible_characters = "abcdefghijklmnopqrstuvwxyz1234567890ABCDEFGHIJKLMNOPQRSTUVWXYZ*/-._,";
 	$string = ""; 
 	while( strlen($string) < $length ) { 
     	$string .= substr($possible_characters,

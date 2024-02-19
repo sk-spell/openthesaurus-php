@@ -14,10 +14,11 @@ if( WEB_LANG == 'de_DE' ) {
 	}
 }
 ?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 
 <html>
 <head>
+	<meta name="google-adsense-account" content="ca-pub-4407908224822840">
 	<?php
 	$head_title = "";
 	if( isset($title) ) {
@@ -25,8 +26,8 @@ if( WEB_LANG == 'de_DE' ) {
 		$head_title = preg_replace("/<.*?>/", "", $title);		# no HTML in head's title element
 	}
 	if( isset($login_page) && $login_page == 1 ) {
-		print "<title>"._("OpenThesaurus - German Thesaurus - Login")."</title>\n";
-		$title = _("OpenThesaurus - German Thesaurus - Login");
+		print "<title>"._("OpenThesaurus - Login")."</title>\n";
+		$title = _("OpenThesaurus - Login");
 		print KEYWORDS."\n";
 	} else if( isset($page) && $page == "homepage" ) {
 		?>

@@ -2,7 +2,7 @@
 
 This is an fork of [http://sourceforge.net/projects/openthesaurus/](http://sourceforge.net/projects/openthesaurus/)
 
-** ✨ Calling all PHP heroes!  This open-source project needs your superpowers to blast off!  Help us write the next chapter.  Code the future, together! ✨ **
+✨ *Calling all PHP heroes!  This open-source project needs your superpowers to blast off!  Help us write the next chapter.  Code the future, together!* ✨
 
 
 Copyright (C) 2003-2007 [Daniel Naber](http://www.danielnaber.de)
